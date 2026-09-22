@@ -1,0 +1,101 @@
+{
+  "slug": "blenderbottle",
+  "brand": {
+    "name": "BlenderBottle",
+    "domain": "www.blenderbottle.com"
+  },
+  "recipient": {
+    "name": "Dmitry Mal"
+  },
+  "sender": {
+    "name": "Sam Patel",
+    "title": "",
+    "avatar": "sam-patel.webp",
+    "adsReviewed": "10,000+"
+  },
+  "product": {
+    "name": "shaker",
+    "noun": "shaker"
+  },
+  "category": {
+    "name": "fitness gear",
+    "demoLabel": "a big fitness label like Gymshark"
+  },
+  "market": {
+    "adsRunning": "792",
+    "yourAds": "four",
+    "monthlySpend": "$50,000/m",
+    "revenueLift": "+60%"
+  },
+  "scenes": [
+    {
+      "file": "scene-sky-toast.webp",
+      "alt": "Two shakers raised against open sky",
+      "caption": "Two shakers against open sky"
+    },
+    {
+      "file": "scene-sky-hold.webp",
+      "alt": "A hand holding a white shaker by the loop",
+      "caption": "One hand, clean white shaker"
+    },
+    {
+      "file": "scene-gym-floor.webp",
+      "alt": "Shaker on the gym floor between sets",
+      "caption": "Between sets on the gym floor"
+    },
+    {
+      "file": "scene-studio-drop.webp",
+      "alt": "Studio shot with the lid and mixer floating above the bottle",
+      "caption": "Studio drop, lid in mid-air"
+    },
+    {
+      "file": "scene-studio-amber.webp",
+      "alt": "Low-key studio shot with warm rim light",
+      "caption": "Low-key studio, warm rim light"
+    }
+  ],
+  "hero": {
+    "main": "scene-sky-toast.webp",
+    "inset": "scene-gym-floor.webp"
+  },
+  "video": {
+    "file": null,
+    "poster": "scene-gym-floor.webp",
+    "sceneDetail": "a real face in the gym"
+  },
+  "form": {
+    "calLink": "",
+    "endpoint": "",
+    "mailto": "hello@prizmad.com"
+  },
+  "formats": [
+    {
+      "file": "fmt-ugc.webp",
+      "label": "UGC"
+    },
+    {
+      "file": "fmt-unboxing.webp",
+      "label": "Unboxing"
+    },
+    {
+      "file": "fmt-product-demo.webp",
+      "label": "Product demo"
+    },
+    {
+      "file": "fmt-talking-head.webp",
+      "label": "Talking head"
+    },
+    {
+      "file": "fmt-lifestyle.webp",
+      "label": "Lifestyle"
+    },
+    {
+      "file": "fmt-hands-on.webp",
+      "label": "Hands-on"
+    },
+    {
+      "file": "fmt-studio.webp",
+      "label": "Studio"
+    }
+  ]
+}
