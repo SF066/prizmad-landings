@@ -1,0 +1,74 @@
+{
+  "slug": "bosch",
+  "template": "a-demo",
+  "brand": {
+    "name": "Bosch",
+    "domain": "www.bosch-home.com"
+  },
+  "recipient": {
+    "name": "Anna Keller"
+  },
+  "sender": {
+    "name": "Sam Patel",
+    "title": "",
+    "avatar": "sam-patel.webp",
+    "adsReviewed": "10,000+"
+  },
+  "product": {
+    "name": "toaster",
+    "noun": "toaster"
+  },
+  "category": {
+    "name": "kitchen appliance",
+    "demoLabel": "a big kitchen label like Ninja"
+  },
+  "market": {
+    "adsRunning": "792",
+    "yourAds": "four",
+    "monthlySpend": "$50,000/m",
+    "revenueLift": "+60%"
+  },
+  "scenes": [
+    {
+      "file": "s1-counter.webp",
+      "alt": "Toaster on a bright kitchen counter",
+      "caption": "Toaster on the counter"
+    },
+    {
+      "file": "s2-slot.webp",
+      "alt": "Close-up of the toaster slot",
+      "caption": "Slot, macro"
+    },
+    {
+      "file": "s3-toast.webp",
+      "alt": "Toast rising out of the slot",
+      "caption": "Toast rising"
+    },
+    {
+      "file": "s4-butter.webp",
+      "alt": "Butter spread on warm toast",
+      "caption": "Butter on warm toast"
+    },
+    {
+      "file": "s5-bite.webp",
+      "alt": "Woman taking the first bite",
+      "caption": "First bite"
+    }
+  ],
+  "hero": {
+    "main": "s1-counter.webp",
+    "inset": "s5-bite.webp",
+    "focus": "50% 50%"
+  },
+  "video": {
+    "file": "sample.mp4",
+    "poster": "s5-bite.webp",
+    "sceneDetail": "a real kitchen and real hands"
+  },
+  "form": {
+    "calLink": "",
+    "endpoint": "",
+    "mailto": "hello@prizmad.com"
+  },
+  "banner": "banner.webp"
+}

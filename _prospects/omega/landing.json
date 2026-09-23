@@ -1,0 +1,73 @@
+{
+  "slug": "omega",
+  "template": "a-demo",
+  "brand": {
+    "name": "Omega",
+    "domain": "www.omegawatches.com"
+  },
+  "recipient": {
+    "name": "Lukas Brandt"
+  },
+  "sender": {
+    "name": "Sam Patel",
+    "title": "",
+    "avatar": "sam-patel.webp",
+    "adsReviewed": "10,000+"
+  },
+  "product": {
+    "name": "green-dial watch",
+    "noun": "watch"
+  },
+  "category": {
+    "name": "watches",
+    "demoLabel": "a big watch label like TAG Heuer"
+  },
+  "market": {
+    "adsRunning": "792",
+    "yourAds": "four",
+    "monthlySpend": "$50,000/m",
+    "revenueLift": "+60%"
+  },
+  "scenes": [
+    {
+      "file": "s1-wrist.webp",
+      "alt": "The watch on a wrist",
+      "caption": "On the wrist"
+    },
+    {
+      "file": "s2-dial.webp",
+      "alt": "Macro of the dial",
+      "caption": "Dial, macro"
+    },
+    {
+      "file": "s3-movement.webp",
+      "alt": "The movement at work",
+      "caption": "Movement at work"
+    },
+    {
+      "file": "s4-caseback.webp",
+      "alt": "Close-up of the caseback",
+      "caption": "Caseback, close"
+    },
+    {
+      "file": "s5-case.webp",
+      "alt": "The case in low light",
+      "caption": "Case in the dark"
+    }
+  ],
+  "hero": {
+    "main": "s1-wrist.webp",
+    "inset": "s2-dial.webp",
+    "focus": "50% 45%"
+  },
+  "video": {
+    "file": "sample.mp4",
+    "poster": "s1-wrist.webp",
+    "sceneDetail": "a real wrist and real light"
+  },
+  "form": {
+    "calLink": "",
+    "endpoint": "",
+    "mailto": "hello@prizmad.com"
+  }
+}

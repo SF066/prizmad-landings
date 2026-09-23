@@ -30,43 +30,45 @@
   },
   "scenes": [
     {
-      "file": "scene-sky-toast.webp",
-      "alt": "Two shakers raised against open sky",
-      "caption": "Two shakers against open sky"
+      "file": "s1-run.webp",
+      "alt": "Woman drinking after the run",
+      "caption": "After the run"
     },
     {
-      "file": "scene-sky-hold.webp",
-      "alt": "A hand holding a white shaker by the loop",
-      "caption": "One hand, clean white shaker"
+      "file": "s2-sunset.webp",
+      "alt": "Man drinking at sunset",
+      "caption": "Sip at sunset"
     },
     {
-      "file": "scene-gym-floor.webp",
-      "alt": "Shaker on the gym floor between sets",
-      "caption": "Between sets on the gym floor"
+      "file": "s3-gym.webp",
+      "alt": "Shaker in the gym",
+      "caption": "Shaker in the gym"
     },
     {
-      "file": "scene-studio-drop.webp",
-      "alt": "Studio shot with the lid and mixer floating above the bottle",
-      "caption": "Studio drop, lid in mid-air"
+      "file": "s4-summit.webp",
+      "alt": "Two friends at the summit",
+      "caption": "Two friends, one summit"
     },
     {
-      "file": "scene-studio-amber.webp",
-      "alt": "Low-key studio shot with warm rim light",
-      "caption": "Low-key studio, warm rim light"
+      "file": "s5-track.webp",
+      "alt": "Runner on the track",
+      "caption": "Track session"
     }
   ],
   "hero": {
-    "main": "scene-sky-toast.webp",
-    "inset": "scene-gym-floor.webp"
+    "main": "s1-run.webp",
+    "inset": "s2-sunset.webp",
+    "focus": "50% 50%"
   },
   "video": {
-    "file": null,
-    "poster": "scene-gym-floor.webp",
+    "file": "sample.mp4",
+    "poster": "s2-sunset.webp",
     "sceneDetail": "a real face in the gym"
   },
   "form": {
     "calLink": "",
     "endpoint": "",
     "mailto": "hello@prizmad.com"
-  }
+  },
+  "banner": "banner.webp"
 }

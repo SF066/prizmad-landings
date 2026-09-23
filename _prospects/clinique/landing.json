@@ -1,0 +1,74 @@
+{
+  "slug": "clinique",
+  "template": "c-texture",
+  "brand": {
+    "name": "Clinique",
+    "domain": "www.clinique.com"
+  },
+  "recipient": {
+    "name": "Julie Moreau"
+  },
+  "sender": {
+    "name": "Sam Patel",
+    "title": "",
+    "avatar": "sam-patel.webp",
+    "adsReviewed": "10,000+"
+  },
+  "product": {
+    "name": "Redness Solutions",
+    "noun": "cream"
+  },
+  "category": {
+    "name": "skincare",
+    "demoLabel": "a big skincare label like The Ordinary"
+  },
+  "market": {
+    "adsRunning": "792",
+    "yourAds": "four",
+    "monthlySpend": "$50,000/m",
+    "revenueLift": "+60%"
+  },
+  "scenes": [
+    {
+      "file": "s1-jar.webp",
+      "alt": "Cream jar on green silk",
+      "caption": "Jar on silk"
+    },
+    {
+      "file": "s2-hand.webp",
+      "alt": "The jar held in a hand",
+      "caption": "Cream in hand"
+    },
+    {
+      "file": "s3-texture.webp",
+      "alt": "Macro of the cream texture",
+      "caption": "Texture, macro"
+    },
+    {
+      "file": "s4-routine.webp",
+      "alt": "Woman applying the cream",
+      "caption": "Morning routine"
+    },
+    {
+      "file": "s5-portrait.webp",
+      "alt": "Portrait with bare skin",
+      "caption": "Bare skin portrait"
+    }
+  ],
+  "hero": {
+    "main": "s5-portrait.webp",
+    "inset": "s4-routine.webp",
+    "focus": "50% 32%"
+  },
+  "video": {
+    "file": "sample.mp4",
+    "poster": "s4-routine.webp",
+    "sceneDetail": "a real face in morning light"
+  },
+  "form": {
+    "calLink": "",
+    "endpoint": "",
+    "mailto": "hello@prizmad.com"
+  },
+  "banner": "banner.webp"
+}
