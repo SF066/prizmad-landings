@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="hero-bleed">
-      <img src="assets/img/{{hero.main.file}}" alt="{{hero.main.alt}}" width="{{hero.main.width}}" height="{{hero.main.height}}" fetchpriority="high">
-      <span class="bleed-cap">{{hero.main.caption}}</span>
+      <img src="assets/img/{{heroBleed.file}}" alt="{{heroBleed.alt}}" width="{{heroBleed.width}}" height="{{heroBleed.height}}" fetchpriority="high">
+      {{#heroBleed.caption}}<span class="bleed-cap">{{heroBleed.caption}}</span>{{/heroBleed.caption}}
     </div>
   </section>

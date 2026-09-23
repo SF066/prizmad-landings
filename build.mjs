@@ -200,7 +200,9 @@ function prepare(slug) {
     hero: { main: pick(data.hero.main, "hero.main"), inset: pick(data.hero.inset, "hero.inset") },
     sender: { ...data.sender, title: data.sender.title || "" },
     video: { ...data.video, file: videoFile, poster: pick(data.video.poster, "video.poster") },
-    showBanner: Boolean(data.banner) && template !== "b-scene",
+    // b-scene puts the banner in the hero, c-texture right under the hero copy
+    showBanner: Boolean(data.banner) && !["b-scene", "c-texture"].includes(template),
+    heroBleed: data.banner ? { ...image(data.banner, "", "banner"), caption: "" } : pick(data.hero.main, "hero.main"),
     heroThumbs: builtScenes.filter((x) => x.file !== data.hero.main).slice(0, 3),
     banner: data.banner ? { ...image(data.banner, "", "banner"), alt: "" } : { file: "" },
     formats: Array.isArray(data.formats) && data.formats.length ? data.formats.map((f, i) => {
