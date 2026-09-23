@@ -214,6 +214,7 @@ function prepare(slug) {
     videos: builtVideos,
     videoShape: `${posterShape} count-${builtVideos.length}`,
     // b-scene puts the banner in the hero, c-texture right under the hero copy
+    heroTone: data.hero.tone === "dark" ? "tone-dark" : "",
     showBanner: Boolean(data.banner) && !["b-scene", "c-texture"].includes(template),
     hero: { main: pick(data.hero.main, "hero.main"), inset: pick(data.hero.inset, "hero.inset"), focus: data.hero.focus || "50% 50%" },
     heroBleed: data.banner ? { ...image(data.banner, "", "banner"), caption: "" } : pick(data.hero.main, "hero.main"),

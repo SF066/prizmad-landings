@@ -1,6 +1,6 @@
 {
   "slug": "omega",
-  "template": "a-demo",
+  "template": "c-texture",
   "brand": {
     "name": "Omega",
     "domain": "www.omegawatches.com"
@@ -58,7 +58,8 @@
   "hero": {
     "main": "s1-wrist.webp",
     "inset": "s2-dial.webp",
-    "focus": "50% 45%"
+    "focus": "50% 45%",
+    "tone": "dark"
   },
   "video": {
     "files": [
