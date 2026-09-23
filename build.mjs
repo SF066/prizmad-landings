@@ -197,11 +197,11 @@ function prepare(slug) {
     recipient: name
       ? { name, initials: data.recipient.initials || name.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase() }
       : {},
-    hero: { main: pick(data.hero.main, "hero.main"), inset: pick(data.hero.inset, "hero.inset") },
     sender: { ...data.sender, title: data.sender.title || "" },
     video: { ...data.video, file: videoFile, poster: pick(data.video.poster, "video.poster") },
     // b-scene puts the banner in the hero, c-texture right under the hero copy
     showBanner: Boolean(data.banner) && !["b-scene", "c-texture"].includes(template),
+    hero: { main: pick(data.hero.main, "hero.main"), inset: pick(data.hero.inset, "hero.inset"), focus: data.hero.focus || "50% 50%" },
     heroBleed: data.banner ? { ...image(data.banner, "", "banner"), caption: "" } : pick(data.hero.main, "hero.main"),
     heroReels: [builtScenes.find((x) => x.file === data.hero.inset) || builtScenes[1], builtScenes.find((x) => x.file === data.hero.main) || builtScenes[0], builtScenes.find((x) => ![data.hero.main, data.hero.inset].includes(x.file)) || builtScenes[2]],
     heroThumbs: builtScenes.filter((x) => x.file !== data.hero.main).slice(0, 3),

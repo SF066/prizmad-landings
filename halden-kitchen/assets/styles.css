@@ -537,7 +537,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
 .hero-demo .wrap {
   max-width: none; padding: 0 0 0 max(24px, calc((100% - var(--wrap)) / 2 + 24px));
   grid-template-columns: minmax(0, 560px) minmax(0, 1fr); gap: 56px; align-items: center;
-  min-height: min(76vh, 700px);
+  min-height: min(72vh, 660px);
 }
 .hero-demo .hero-copy { padding: 72px 0; }
 .hero-demo .hero-media { position: relative; align-self: stretch; }

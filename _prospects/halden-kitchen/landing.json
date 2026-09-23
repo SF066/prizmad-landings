@@ -57,7 +57,8 @@
   ],
   "hero": {
     "main": "s2-kitchen.webp",
-    "inset": "s3-pour.webp"
+    "inset": "s3-pour.webp",
+    "focus": "50% 34%"
   },
   "banner": "banner.webp",
   "video": {

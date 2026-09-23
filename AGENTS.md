@@ -40,6 +40,7 @@ The page copy is approved and fixed in the template. Agents never rewrite it; th
 | `market.revenueLift` | revenue lift from varied creative | `+60%` |
 | `scenes[]` | "five ad scenes", 3D carousel | 3-10 items. Each: `file`, `alt` (what is in the photo), `caption` (short scene description shown on the card, under 40 chars) |
 | `hero.main`, `hero.inset` | two hero photos | file names from `scenes`. Alt and the caption on the main photo come from the scene |
+| `hero.focus` | which part of the hero photo stays in frame when it is cropped | optional, CSS `object-position`, e.g. `50% 34%` to keep a tall product whole. Default `50% 50%` |
 | `banner` | full-width image band. In `b-scene` it is the hero and is required, in the others it is an optional band after the gallery | wide 16:9 photo in `media/` |
 | `video.file` | sample player | mp4 in `media/`, 16:9. `null` hides the play button and shows only the poster |
 | `video.poster` | player poster | file name from `scenes` |
