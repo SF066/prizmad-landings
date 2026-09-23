@@ -14,13 +14,8 @@
         </div>
       </div>
       <div class="hero-media">
-        <figure class="demo-frame">
-          <img src="assets/img/{{hero.main.file}}" alt="{{hero.main.alt}}" width="{{hero.main.width}}" height="{{hero.main.height}}" fetchpriority="high">
-          <figcaption>{{hero.main.caption}}</figcaption>
-        </figure>
-        <div class="demo-thumbs">
-          {{#heroThumbs}}<img src="assets/img/{{file}}" alt="" width="{{width}}" height="{{height}}" loading="lazy">{{/heroThumbs}}
-        </div>
+        <img src="assets/img/{{hero.main.file}}" alt="{{hero.main.alt}}" width="{{hero.main.width}}" height="{{hero.main.height}}" fetchpriority="high">
+        <span class="edge-cap">{{hero.main.caption}}</span>
       </div>
     </div>
   </section>
