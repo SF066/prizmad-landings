@@ -1,0 +1,72 @@
+{
+  "slug": "bivak-union",
+  "brand": {
+    "name": "Bivak Union",
+    "domain": "www.bivakunion.com"
+  },
+  "recipient": {
+    "name": "Dmitry Mal"
+  },
+  "sender": {
+    "name": "Sam Patel",
+    "title": "",
+    "avatar": "sam-patel.webp",
+    "adsReviewed": "10,000+"
+  },
+  "product": {
+    "name": "Trail 3",
+    "noun": "tent"
+  },
+  "category": {
+    "name": "outdoor gear",
+    "demoLabel": "a big outdoor label like The North Face"
+  },
+  "market": {
+    "adsRunning": "792",
+    "yourAds": "four",
+    "monthlySpend": "$50,000/m",
+    "revenueLift": "+60%"
+  },
+  "scenes": [
+    {
+      "file": "s1-studio.webp",
+      "alt": "Tent on a studio backdrop",
+      "caption": "Studio, pitched and clean"
+    },
+    {
+      "file": "s2-forest.webp",
+      "alt": "Tent in a foggy forest clearing",
+      "caption": "Forest clearing in the fog"
+    },
+    {
+      "file": "s3-evening.webp",
+      "alt": "Tent glowing at dusk on a ridge",
+      "caption": "Warm glow at dusk"
+    },
+    {
+      "file": "s4-hiker.webp",
+      "alt": "Hiker pegging down the tent",
+      "caption": "Pegging down in the wind"
+    },
+    {
+      "file": "s5-detail.webp",
+      "alt": "Rain drops on the tent fabric",
+      "caption": "Rain beading on the fly"
+    }
+  ],
+  "hero": {
+    "main": "s3-evening.webp",
+    "inset": "s4-hiker.webp"
+  },
+  "banner": "banner.webp",
+  "video": {
+    "file": null,
+    "poster": "s2-forest.webp",
+    "sceneDetail": "a real face by the fire"
+  },
+  "form": {
+    "calLink": "",
+    "endpoint": "",
+    "mailto": "hello@prizmad.com"
+  }
+}

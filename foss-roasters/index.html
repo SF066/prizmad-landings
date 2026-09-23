@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>This is what your {{brand.name}} ad could look like | Prizmad</title>
+<title>This is what your Foss Roasters ad could look like | Prizmad</title>
 <meta name="description" content="AI UGC video ad generator for e-commerce marketers, performance advertisers, and creative agencies.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="This is what your {{brand.name}} ad could look like">
-<meta property="og:image" content="assets/img/{{hero.main.file}}">
+<meta property="og:title" content="This is what your Foss Roasters ad could look like">
+<meta property="og:image" content="assets/img/s2-kitchen.webp">
 <link rel="icon" href="assets/prizmad-emblem.svg" type="image/svg+xml">
-<link rel="preload" href="assets/img/{{hero.main.file}}" as="image">
+<link rel="preload" href="assets/img/s2-kitchen.webp" as="image">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body data-slug="{{slug}}" data-brand="{{brand.name}}">
+<body data-slug="foss-roasters" data-brand="Foss Roasters">
 
 <header class="nav" id="top">
   <div class="wrap">
@@ -28,12 +28,12 @@
     <div class="wrap">
       <div class="hero-copy">
         <div class="sender">
-          <img src="assets/img/senders/{{sender.avatar}}" alt="{{sender.name}}" width="44" height="44">
-          <p>I'm {{sender.name}}{{#sender.title}}, {{sender.title}}{{/sender.title}}. I analyzed {{sender.adsReviewed}} ads in your niche to see what's working in your market</p>
+          <img src="assets/img/senders/sam-patel.webp" alt="Sam Patel" width="44" height="44">
+          <p>I'm Sam Patel. I analyzed 10,000+ ads in your niche to see what's working in your market</p>
         </div>
-        {{#recipient.name}}<span class="pill pill-accent">{{recipient.name}}</span>{{/recipient.name}}
-        <h1>This is what your <span class="brand">{{brand.name}}</span> ad could look like</h1>
-        <p class="lede">You haven't sent us anything. We pulled the {{product.name}} photos from your site and built {{scenesWord}} ad scenes around the {{product.noun}}. Tell us which product to feature and we'll build the same for your bestseller, before we even talk</p>
+        <span class="pill pill-accent">Nils Berg</span>
+        <h1>This is what your <span class="brand">Foss Roasters</span> ad could look like</h1>
+        <p class="lede">You haven't sent us anything. We pulled the House Blend photos from your site and built five ad scenes around the coffee. Tell us which product to feature and we'll build the same for your bestseller, before we even talk</p>
         <div class="hero-ctas">
           <a class="btn btn-primary btn-lg" href="#book" data-book>Get my creative free <svg class="icon icon-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
           <a class="btn btn-outline btn-lg" href="#sample"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"/></svg> Watch the sample</a>
@@ -41,43 +41,47 @@
       </div>
       <div class="hero-media">
         <figure class="main">
-          <img src="assets/img/{{hero.main.file}}" alt="{{hero.main.alt}}" width="{{hero.main.width}}" height="{{hero.main.height}}" fetchpriority="high">
-          <figcaption>{{hero.main.caption}}</figcaption>
+          <img src="assets/img/s2-kitchen.webp" alt="Bag next to a pour-over dripper" width="900" height="1200" fetchpriority="high">
+          <figcaption>Counter with the pour-over</figcaption>
         </figure>
-        <div class="inset"><img src="assets/img/{{hero.inset.file}}" alt="{{hero.inset.alt}}" width="{{hero.inset.width}}" height="{{hero.inset.height}}"></div>
+        <div class="inset"><img src="assets/img/s3-pour.webp" alt="Water poured over coffee grounds" width="900" height="1200"></div>
       </div>
     </div>
   </section>
 
-  <section class="band sec scenes" aria-label="{{ScenesWord}} scenes">
+  <section class="band sec scenes" aria-label="Five scenes">
     <div class="wrap">
-      <p class="scenes-lead reveal">{{ScenesWord}} scenes. Your own product. No shoot, no shipping, no location. Every frame here started as a product photo from your own site. <em>Nothing was filmed.</em></p>
-      <div class="cf reveal" id="cf" aria-roledescription="carousel" aria-label="{{ScenesWord}} ad scenes">
+      <p class="scenes-lead reveal">Five scenes. Your own product. No shoot, no shipping, no location. Every frame here started as a product photo from your own site. <em>Nothing was filmed.</em></p>
+      <div class="cf reveal" id="cf" aria-roledescription="carousel" aria-label="Five ad scenes">
         <div class="cf-stage">
-          {{#scenes}}<button class="cf-card" type="button" data-i="{{idx}}" data-num="{{num}}" data-caption="{{caption}}" aria-label="{{caption}}"><img src="assets/img/{{file}}" alt="{{alt}}" width="{{width}}" height="{{height}}" loading="lazy" draggable="false"><span class="cf-cap">{{caption}}</span></button>
-          {{/scenes}}
+          <button class="cf-card" type="button" data-i="0" data-num="01" data-caption="Studio, beans at the base" aria-label="Studio, beans at the base"><img src="assets/img/s1-studio.webp" alt="Coffee bag on a studio backdrop" width="900" height="1200" loading="lazy" draggable="false"><span class="cf-cap">Studio, beans at the base</span></button>
+          <button class="cf-card" type="button" data-i="1" data-num="02" data-caption="Counter with the pour-over" aria-label="Counter with the pour-over"><img src="assets/img/s2-kitchen.webp" alt="Bag next to a pour-over dripper" width="900" height="1200" loading="lazy" draggable="false"><span class="cf-cap">Counter with the pour-over</span></button>
+          <button class="cf-card" type="button" data-i="2" data-num="03" data-caption="Water over fresh grounds" aria-label="Water over fresh grounds"><img src="assets/img/s3-pour.webp" alt="Water poured over coffee grounds" width="900" height="1200" loading="lazy" draggable="false"><span class="cf-cap">Water over fresh grounds</span></button>
+          <button class="cf-card" type="button" data-i="3" data-num="04" data-caption="Scooping beans at the roastery" aria-label="Scooping beans at the roastery"><img src="assets/img/s4-barista.webp" alt="Barista scooping beans from the bag" width="900" height="1200" loading="lazy" draggable="false"><span class="cf-cap">Scooping beans at the roastery</span></button>
+          <button class="cf-card" type="button" data-i="4" data-num="05" data-caption="Beans spilling out, macro" aria-label="Beans spilling out, macro"><img src="assets/img/s5-detail.webp" alt="Macro of beans spilling out" width="900" height="1200" loading="lazy" draggable="false"><span class="cf-cap">Beans spilling out, macro</span></button>
+          
         </div>
-        <div class="cf-dots">{{#scenes}}<button class="cf-dot" type="button" data-i="{{idx}}" aria-label="{{caption}}"></button>{{/scenes}}</div>
+        <div class="cf-dots"><button class="cf-dot" type="button" data-i="0" aria-label="Studio, beans at the base"></button><button class="cf-dot" type="button" data-i="1" aria-label="Counter with the pour-over"></button><button class="cf-dot" type="button" data-i="2" aria-label="Water over fresh grounds"></button><button class="cf-dot" type="button" data-i="3" aria-label="Scooping beans at the roastery"></button><button class="cf-dot" type="button" data-i="4" aria-label="Beans spilling out, macro"></button></div>
       </div>
     </div>
   </section>
 
-  {{#banner.file}}<section class="banner-strip" aria-label="{{brand.name}} scene">
-    <img src="assets/img/{{banner.file}}" alt="{{banner.alt}}" width="{{banner.width}}" height="{{banner.height}}" loading="lazy">
-  </section>{{/banner.file}}
+  <section class="banner-strip" aria-label="Foss Roasters scene">
+    <img src="assets/img/banner.webp" alt="" width="1600" height="900" loading="lazy">
+  </section>
 
   <section class="sec video" id="sample" aria-labelledby="video-title">
     <div class="wrap">
       <div class="sec-head reveal">
         <h2 id="video-title">And this is what it looks like as ADS</h2>
-        <p>This is a demo we built as a category reference, shot the way {{category.demoLabel}} would run it: {{video.sceneDetail}}, a voice, proper cuts. Yours would be exactly this, with your own gear in the frame and {{brand.name}} at the end</p>
+        <p>This is a demo we built as a category reference, shot the way a big coffee label like Blue Bottle would run it: a real counter, steam and hands, a voice, proper cuts. Yours would be exactly this, with your own gear in the frame and Foss Roasters at the end</p>
       </div>
       <div class="player reveal" id="player">
-        <video id="sample-video" preload="none" playsinline controls poster="assets/img/{{video.poster.file}}">
-          {{#video.file}}<source src="assets/video/{{video.file}}" type="video/mp4">{{/video.file}}
+        <video id="sample-video" preload="none" playsinline controls poster="assets/img/s4-barista.webp">
+          
         </video>
-        <img class="poster" src="assets/img/{{video.poster.file}}" alt="" loading="lazy">
-        {{#video.file}}<button class="play" type="button" aria-label="Play"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></button>{{/video.file}}
+        <img class="poster" src="assets/img/s4-barista.webp" alt="" loading="lazy">
+        
       </div>
       <div class="center-cta"><a class="btn btn-primary btn-lg" href="#book" data-book>I want this for my products <svg class="icon icon-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></div>
     </div>
@@ -87,17 +91,17 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="pill">We looked at your category</span>
-        <h2 id="market-title">We analyzed the {{category.name}} ad market</h2>
+        <h2 id="market-title">We analyzed the coffee and tea ad market</h2>
         <p>Same products, same budgets across the category. What separates the brands that win is how many creatives they put in rotation</p>
       </div>
       <div class="market-card reveal">
         <div class="stat-big">
-          <div class="num">{{market.adsRunning}}</div>
-          <p>ads the average brand in your category is running right now, while you run {{market.yourAds}}</p>
+          <div class="num">792</div>
+          <p>ads the average brand in your category is running right now, while you run four</p>
         </div>
         <div class="stat-side">
-          <div><div class="num">{{market.monthlySpend}}</div><p>what brands your size spend on ads every month. Creative is the cheapest part of it</p></div>
-          <div><div class="num">{{market.revenueLift}}</div><p>in revenue from stronger, more varied creative which is exactly what AI video makes affordable</p></div>
+          <div><div class="num">$50,000/m</div><p>what brands your size spend on ads every month. Creative is the cheapest part of it</p></div>
+          <div><div class="num">+60%</div><p>in revenue from stronger, more varied creative which is exactly what AI video makes affordable</p></div>
         </div>
       </div>
       <p class="pull reveal">One ad that works pays for the whole batch. The other nine tell you which one it is</p>
@@ -143,8 +147,8 @@
         <a class="btn btn-white" href="#book" data-book>Get my creative free <svg class="icon icon-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
         <div class="formats-marquee" aria-hidden="true">
           <div class="fm-track">
-            {{#formats}}<figure class="fm-card"><img src="assets/img/{{file}}" alt="" loading="lazy"><figcaption>{{label}}</figcaption></figure>{{/formats}}
-            {{#formats}}<figure class="fm-card"><img src="assets/img/{{file}}" alt="" loading="lazy"><figcaption>{{label}}</figcaption></figure>{{/formats}}
+            <figure class="fm-card"><img src="assets/img/ugc-curls.webp" alt="" loading="lazy"><figcaption>UGC</figcaption></figure><figure class="fm-card"><img src="assets/img/s4-barista.webp" alt="" loading="lazy"><figcaption>Unboxing</figcaption></figure><figure class="fm-card"><img src="assets/img/s2-kitchen.webp" alt="" loading="lazy"><figcaption>Product demo</figcaption></figure><figure class="fm-card"><img src="assets/img/ugc-red.webp" alt="" loading="lazy"><figcaption>Talking head</figcaption></figure><figure class="fm-card"><img src="assets/img/s3-pour.webp" alt="" loading="lazy"><figcaption>Lifestyle</figcaption></figure><figure class="fm-card"><img src="assets/img/s1-studio.webp" alt="" loading="lazy"><figcaption>Hands-on</figcaption></figure><figure class="fm-card"><img src="assets/img/s5-detail.webp" alt="" loading="lazy"><figcaption>Studio</figcaption></figure>
+            <figure class="fm-card"><img src="assets/img/ugc-curls.webp" alt="" loading="lazy"><figcaption>UGC</figcaption></figure><figure class="fm-card"><img src="assets/img/s4-barista.webp" alt="" loading="lazy"><figcaption>Unboxing</figcaption></figure><figure class="fm-card"><img src="assets/img/s2-kitchen.webp" alt="" loading="lazy"><figcaption>Product demo</figcaption></figure><figure class="fm-card"><img src="assets/img/ugc-red.webp" alt="" loading="lazy"><figcaption>Talking head</figcaption></figure><figure class="fm-card"><img src="assets/img/s3-pour.webp" alt="" loading="lazy"><figcaption>Lifestyle</figcaption></figure><figure class="fm-card"><img src="assets/img/s1-studio.webp" alt="" loading="lazy"><figcaption>Hands-on</figcaption></figure><figure class="fm-card"><img src="assets/img/s5-detail.webp" alt="" loading="lazy"><figcaption>Studio</figcaption></figure>
           </div>
         </div>
       </div>
@@ -217,7 +221,7 @@
           <span role="columnheader" class="grp">Prizmad</span>
           <span role="columnheader">Other agencies</span>
         </div>
-        <div class="trow" role="row"><span class="task" role="rowheader">Finding a UGC creator for {{category.name}}</span><div role="cell"><span class="lbl">Prizmad</span><span class="us-val">Gone</span></div><div role="cell"><span class="lbl">Other agencies</span><span class="them-val">1-2 weeks</span></div><div role="cell"><span class="lbl">Prizmad</span><span class="us-val">$0</span></div><div role="cell"><span class="lbl">Other agencies</span><span class="them-val">Platform fees</span></div></div>
+        <div class="trow" role="row"><span class="task" role="rowheader">Finding a UGC creator for coffee and tea</span><div role="cell"><span class="lbl">Prizmad</span><span class="us-val">Gone</span></div><div role="cell"><span class="lbl">Other agencies</span><span class="them-val">1-2 weeks</span></div><div role="cell"><span class="lbl">Prizmad</span><span class="us-val">$0</span></div><div role="cell"><span class="lbl">Other agencies</span><span class="them-val">Platform fees</span></div></div>
         <div class="trow" role="row"><span class="task" role="rowheader">Logistics of gear to the shooting location</span><div role="cell"><span class="lbl">Prizmad</span><span class="us-val">Gone</span></div><div role="cell"><span class="lbl">Other agencies</span><span class="them-val">1-2 weeks</span></div><div role="cell"><span class="lbl">Prizmad</span><span class="us-val">$0</span></div><div role="cell"><span class="lbl">Other agencies</span><span class="them-val">$20-100</span></div></div>
         <div class="trow" role="row"><span class="task" role="rowheader">Briefs and script revisions</span><div role="cell"><span class="lbl">Prizmad</span><span class="us-val">One email</span></div><div role="cell"><span class="lbl">Other agencies</span><span class="them-val">3-5 days</span></div><div role="cell"><span class="lbl">Prizmad</span><span class="us-val">Included</span></div><div role="cell"><span class="lbl">Other agencies</span><span class="them-val">Billed per round</span></div></div>
         <div class="trow" role="row"><span class="task" role="rowheader">Shooting (weather permitting) and editing</span><div role="cell"><span class="lbl">Prizmad</span><span class="us-val">Our responsibility</span></div><div role="cell"><span class="lbl">Other agencies</span><span class="them-val">1-2 weeks</span></div><div role="cell"><span class="lbl">Prizmad</span><span class="us-val">Included</span></div><div role="cell"><span class="lbl">Other agencies</span><span class="them-val">$300-1,500 per video</span></div></div>
@@ -244,7 +248,7 @@
         <a class="btn btn-white btn-lg" href="#book" data-book>Fill out the form <svg class="icon icon-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
       </div>
       <div class="final-stack reveal" aria-hidden="true">
-        {{#finalStack}}<img src="assets/img/{{file}}" alt="" loading="lazy">{{/finalStack}}
+        <img src="assets/img/s1-studio.webp" alt="" loading="lazy"><img src="assets/img/s2-kitchen.webp" alt="" loading="lazy"><img src="assets/img/s5-detail.webp" alt="" loading="lazy">
       </div>
     </div>
   </section>
@@ -258,7 +262,7 @@
   </div>
 </footer>
 
-<dialog class="lightbox" id="lightbox" aria-label="{{ScenesWord}} scenes">
+<dialog class="lightbox" id="lightbox" aria-label="Five scenes">
   <figure class="lb-figure">
     <img class="lb-img" alt="">
     <figcaption class="lb-cap"></figcaption>
@@ -266,7 +270,7 @@
   <button class="lb-btn lb-close" type="button" aria-label="Close"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></button>
 </dialog>
 
-<dialog class="modal" id="book" aria-labelledby="book-title" data-cal-link="{{form.calLink}}" data-cal-origin="{{form.calOrigin}}" data-endpoint="{{form.endpoint}}" data-mailto="{{form.mailto}}">
+<dialog class="modal" id="book" aria-labelledby="book-title" data-cal-link="" data-cal-origin="https://cal.com" data-endpoint="" data-mailto="hello@prizmad.com">
   <div class="modal-head">
     <div>
       <h3 id="book-title">Pick a time and tell us what to build</h3>
@@ -282,7 +286,7 @@
     <form class="form" id="lead-form" novalidate hidden>
       <div class="field" data-field="product">
         <label for="f-product">Product link</label>
-        <input id="f-product" name="product" type="url" inputmode="url" autocomplete="url" placeholder="{{brand.productUrlExample}}" required>
+        <input id="f-product" name="product" type="url" inputmode="url" autocomplete="url" placeholder="https://www.fossroasters.com/products/..." required>
         <span class="err">Paste a link to the product page.</span>
       </div>
       <fieldset class="field">
@@ -296,7 +300,7 @@
       </fieldset>
       <div class="field" data-field="email">
         <label for="f-email">Work email</label>
-        <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@{{brand.emailDomain}}" required>
+        <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@fossroasters.com" required>
         <span class="err">Enter a valid email.</span>
       </div>
       <div class="field">

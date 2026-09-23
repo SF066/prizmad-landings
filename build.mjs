@@ -181,6 +181,7 @@ function prepare(slug) {
     hero: { main: pick(data.hero.main, "hero.main"), inset: pick(data.hero.inset, "hero.inset") },
     sender: { ...data.sender, title: data.sender.title || "" },
     video: { ...data.video, file: videoFile, poster: pick(data.video.poster, "video.poster") },
+    banner: data.banner ? { ...image(data.banner, "", "banner"), alt: "" } : { file: "" },
     formats: Array.isArray(data.formats) && data.formats.length ? data.formats.map((f, i) => {
       need(f, "label");
       image(f.file, "", `formats[${i}]`);

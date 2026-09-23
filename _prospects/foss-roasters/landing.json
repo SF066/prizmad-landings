@@ -1,0 +1,72 @@
+{
+  "slug": "foss-roasters",
+  "brand": {
+    "name": "Foss Roasters",
+    "domain": "www.fossroasters.com"
+  },
+  "recipient": {
+    "name": "Nils Berg"
+  },
+  "sender": {
+    "name": "Sam Patel",
+    "title": "",
+    "avatar": "sam-patel.webp",
+    "adsReviewed": "10,000+"
+  },
+  "product": {
+    "name": "House Blend",
+    "noun": "coffee"
+  },
+  "category": {
+    "name": "coffee and tea",
+    "demoLabel": "a big coffee label like Blue Bottle"
+  },
+  "market": {
+    "adsRunning": "792",
+    "yourAds": "four",
+    "monthlySpend": "$50,000/m",
+    "revenueLift": "+60%"
+  },
+  "scenes": [
+    {
+      "file": "s1-studio.webp",
+      "alt": "Coffee bag on a studio backdrop",
+      "caption": "Studio, beans at the base"
+    },
+    {
+      "file": "s2-kitchen.webp",
+      "alt": "Bag next to a pour-over dripper",
+      "caption": "Counter with the pour-over"
+    },
+    {
+      "file": "s3-pour.webp",
+      "alt": "Water poured over coffee grounds",
+      "caption": "Water over fresh grounds"
+    },
+    {
+      "file": "s4-barista.webp",
+      "alt": "Barista scooping beans from the bag",
+      "caption": "Scooping beans at the roastery"
+    },
+    {
+      "file": "s5-detail.webp",
+      "alt": "Macro of beans spilling out",
+      "caption": "Beans spilling out, macro"
+    }
+  ],
+  "hero": {
+    "main": "s2-kitchen.webp",
+    "inset": "s3-pour.webp"
+  },
+  "banner": "banner.webp",
+  "video": {
+    "file": null,
+    "poster": "s4-barista.webp",
+    "sceneDetail": "a real counter, steam and hands"
+  },
+  "form": {
+    "calLink": "",
+    "endpoint": "",
+    "mailto": "hello@prizmad.com"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "maren-skin",
+  "brand": {
+    "name": "Maren",
+    "domain": "www.marenskin.com"
+  },
+  "recipient": {
+    "name": "Lena Fischer"
+  },
+  "sender": {
+    "name": "Sam Patel",
+    "title": "",
+    "avatar": "sam-patel.webp",
+    "adsReviewed": "10,000+"
+  },
+  "product": {
+    "name": "Dew Balm",
+    "noun": "cream"
+  },
+  "category": {
+    "name": "skincare",
+    "demoLabel": "a big skincare label like The Ordinary"
+  },
+  "market": {
+    "adsRunning": "792",
+    "yourAds": "four",
+    "monthlySpend": "$50,000/m",
+    "revenueLift": "+60%"
+  },
+  "scenes": [
+    {
+      "file": "s1-studio.webp",
+      "alt": "Cream jar on a studio backdrop",
+      "caption": "Studio, warm beige light"
+    },
+    {
+      "file": "s2-bathroom.webp",
+      "alt": "Jar on a marble bathroom shelf",
+      "caption": "Marble shelf, linen towel"
+    },
+    {
+      "file": "s3-texture.webp",
+      "alt": "Macro of the cream texture",
+      "caption": "Cream texture, macro"
+    },
+    {
+      "file": "s4-routine.webp",
+      "alt": "Woman applying the cream",
+      "caption": "Morning routine at the mirror"
+    },
+    {
+      "file": "s5-hand.webp",
+      "alt": "Open jar held in the sunlight",
+      "caption": "Open jar in the sunlight"
+    }
+  ],
+  "hero": {
+    "main": "s2-bathroom.webp",
+    "inset": "s4-routine.webp"
+  },
+  "banner": "banner.webp",
+  "video": {
+    "file": null,
+    "poster": "s5-hand.webp",
+    "sceneDetail": "a real face in morning light"
+  },
+  "form": {
+    "calLink": "",
+    "endpoint": "",
+    "mailto": "hello@prizmad.com"
+  }
+}
