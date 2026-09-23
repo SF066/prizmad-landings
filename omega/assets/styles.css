@@ -532,20 +532,23 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
    ============================================================ */
 
 /* ---- D: character, the hero is a wall of vertical frames ---- */
-.t-d .hero .wrap { align-items: center; }
-.reels { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.t-d .hero .wrap { align-items: center; grid-template-columns: 1fr 1fr; gap: 40px; }
+.t-d .reels { width: 100%; }
+.t-d .hero-copy { max-width: 520px; }
+.t-d .hero .lede { max-width: 36ch; }
+.reels { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
 .reel {
-  position: relative; margin: 0; flex: 0 0 auto; width: 31%; aspect-ratio: 9 / 16;
+  position: relative; margin: 0; flex: 0 0 auto; width: 35%; aspect-ratio: 9 / 16;
   border-radius: 18px; overflow: hidden; background: var(--muted);
   box-shadow: 0 18px 44px -18px rgb(9 9 11 / .45);
   transform: translateY(16px) rotate(-3deg);
 }
-.reel:nth-child(2) { width: 38%; z-index: 1; transform: none; box-shadow: var(--shadow-lg); }
+.reel:nth-child(2) { width: 46%; z-index: 1; transform: none; box-shadow: var(--shadow-lg); }
 .reel:nth-child(3) { transform: translateY(16px) rotate(3deg); }
 .reel img { width: 100%; height: 100%; object-fit: cover; }
 .reel figcaption {
-  position: absolute; left: 0; right: 0; bottom: 0; padding: 34px 12px 12px;
-  color: #fff; font-size: 13px; font-weight: 600; opacity: 0;
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 38px 14px 14px;
+  color: #fff; font-size: 14px; font-weight: 600; opacity: 0;
   background: linear-gradient(transparent, rgb(9 9 11 / .6));
 }
 .reel:nth-child(2) figcaption { opacity: 1; }
