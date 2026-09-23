@@ -36,18 +36,18 @@
     },
     {
       "file": "s2-dial.webp",
-      "alt": "Macro of the dial",
+      "alt": "Macro of the green dial",
       "caption": "Dial, macro"
     },
     {
       "file": "s3-movement.webp",
-      "alt": "The movement at work",
+      "alt": "The movement through the caseback",
       "caption": "Movement at work"
     },
     {
-      "file": "s4-caseback.webp",
-      "alt": "Close-up of the caseback",
-      "caption": "Caseback, close"
+      "file": "s4-bracelet.webp",
+      "alt": "Close-up of the steel bracelet",
+      "caption": "Bracelet, close"
     },
     {
       "file": "s5-case.webp",
@@ -77,5 +77,6 @@
     "calLink": "",
     "endpoint": "",
     "mailto": "hello@prizmad.com"
-  }
+  },
+  "banner": "banner.webp"
 }
