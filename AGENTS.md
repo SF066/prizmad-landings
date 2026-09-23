@@ -41,7 +41,7 @@ The page copy is approved and fixed in the template. Agents never rewrite it; th
 | `hero.main`, `hero.inset` | two hero photos | file names from `scenes`. Alt and the caption on the main photo come from the scene |
 | `hero.focus` | which part of the hero photo stays in frame when it is cropped | optional, CSS `object-position`, e.g. `50% 34%` to keep a tall product whole. Default `50% 50%` |
 | `hero.tone` | only for `c-texture`: `dark` flips the copy over a dark banner to white | optional. Default light |
-| `gallery` | only for `c-texture`: `mosaic` lays the scenes out as one still rectangle, `strip` (default) runs them as an endless moving band |
+| `gallery` | how the scenes are shown: `process` (numbered steps in a row), `mosaic` (one still rectangle), `strip` (endless moving band, the default in `c-texture`) |
 | `banner` | full-width image band. In `b-scene` it is the hero and is required, in the others it is an optional band after the gallery | wide 16:9 photo in `media/` |
 | `video.files[]` | the sample players | one or more `{ "file", "poster" }`. Vertical 9:16 ads are shown side by side in 9:16 frames, a 16:9 ad is shown as one wide player. The shape comes from the poster, so the poster must match the video |
 | `video.file`, `video.poster` | older single-video form | still works, same as one entry in `video.files` |

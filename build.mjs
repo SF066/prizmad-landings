@@ -214,6 +214,7 @@ function prepare(slug) {
     videos: builtVideos,
     videoShape: `${posterShape} count-${builtVideos.length}`,
     // b-scene puts the banner in the hero, c-texture right under the hero copy
+    galleryProcess: data.gallery === "process",
     galleryKind: data.gallery === "mosaic" ? "as-mosaic" : "as-strip",
     heroTone: data.hero.tone === "dark" ? "tone-dark" : "",
     showBanner: Boolean(data.banner) && !["b-scene", "c-texture"].includes(template),
