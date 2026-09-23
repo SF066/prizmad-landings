@@ -1,6 +1,7 @@
 (() => {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const body = document.body;
+  const nav = document.querySelector(".nav");
 
   // ---------- reveal on scroll ----------
   const items = document.querySelectorAll(".reveal");
@@ -13,6 +14,16 @@
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
     items.forEach((el) => io.observe(el));
+  }
+
+  // ---------- scene hero: the nav stays clear only over the photo ----------
+  const sceneHero = document.querySelector(".hero-scene");
+  if (sceneHero) {
+    nav.classList.add("on-hero");
+    new IntersectionObserver(
+      ([e]) => nav.classList.toggle("on-hero", e.isIntersecting),
+      { rootMargin: "-72px 0px 0px 0px", threshold: 0 }
+    ).observe(sceneHero);
   }
 
   // ---------- 3D coverflow (template D) ----------
