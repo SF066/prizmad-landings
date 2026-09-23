@@ -542,9 +542,9 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
 .hero-demo .hero-copy { padding: 72px 0; }
 .hero-demo .hero-media { position: relative; align-self: stretch; }
 .hero-demo .hero-media::before { display: none; }
-.hero-demo .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 28px 0 0 28px; }
+.hero-demo .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .edge-cap {
-  position: absolute; left: 22px; bottom: 20px; padding: 6px 12px; border-radius: 999px;
+  position: absolute; left: 22px; bottom: 20px; padding: 7px 12px; border-radius: var(--r-sm);
   background: rgb(255 255 255 / .92); font-size: 13px; font-weight: 600; color: var(--ink);
 }
 
@@ -640,7 +640,6 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   .hero-demo .wrap { grid-template-columns: 1fr; gap: 28px; padding: 0 16px; min-height: 0; }
   .hero-demo .hero-copy { padding: 0; }
   .hero-demo .hero-media { height: 420px; margin-right: -16px; }
-  .hero-demo .hero-media img { border-radius: 20px 0 0 20px; }
   .hero-scene { padding: 56px 0 56px; min-height: 0; }
   .hero-note { display: none; }
   .process { grid-template-columns: repeat(2, 1fr); gap: 20px 12px; }
