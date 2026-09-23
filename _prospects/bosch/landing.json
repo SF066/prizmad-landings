@@ -74,5 +74,6 @@
     "endpoint": "",
     "mailto": "hello@prizmad.com"
   },
-  "banner": "banner.webp"
+  "banner": "banner.webp",
+  "gallery": "mosaic"
 }

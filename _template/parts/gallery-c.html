@@ -2,7 +2,7 @@
     <div class="wrap">
       <p class="scenes-lead reveal">{{ScenesWord}} scenes. Your own product. No shoot, no shipping, no location. Every frame here started as a product photo from your own site. <em>Nothing was filmed.</em></p>
     </div>
-    <div class="strip reveal">
+    <div class="strip {{galleryKind}} reveal">
       <div class="strip-track">
         {{#scenes}}<figure class="scard">
           <button type="button" data-lb="{{idx}}" data-caption="{{caption}}" aria-label="{{caption}}"><img src="assets/img/{{file}}" alt="{{alt}}" width="{{width}}" height="{{height}}" loading="lazy"></button>
