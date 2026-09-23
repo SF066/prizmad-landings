@@ -203,6 +203,7 @@ function prepare(slug) {
     // b-scene puts the banner in the hero, c-texture right under the hero copy
     showBanner: Boolean(data.banner) && !["b-scene", "c-texture"].includes(template),
     heroBleed: data.banner ? { ...image(data.banner, "", "banner"), caption: "" } : pick(data.hero.main, "hero.main"),
+    heroReels: [builtScenes.find((x) => x.file === data.hero.inset) || builtScenes[1], builtScenes.find((x) => x.file === data.hero.main) || builtScenes[0], builtScenes.find((x) => ![data.hero.main, data.hero.inset].includes(x.file)) || builtScenes[2]],
     heroThumbs: builtScenes.filter((x) => x.file !== data.hero.main).slice(0, 3),
     banner: data.banner ? { ...image(data.banner, "", "banner"), alt: "" } : { file: "" },
     formats: Array.isArray(data.formats) && data.formats.length ? data.formats.map((f, i) => {
