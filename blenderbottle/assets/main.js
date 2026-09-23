@@ -20,6 +20,7 @@
   const cf = document.getElementById("cf");
   let cfGo = null;
   let cfStop = null;
+  let openShot = null;   // set by the lightbox below
   if (cf) {
     const cards = [...cf.querySelectorAll(".cf-card")];
     const dots = [...cf.querySelectorAll(".cf-dot")];
@@ -63,7 +64,9 @@
     let swiped = false;
     cards.forEach((card, i) => card.addEventListener("click", () => {
       if (swiped) { swiped = false; return; }
+      // a side card only rotates into the middle, the middle one opens
       if (i !== active) { stop(); go(i); }
+      else if (openShot) openShot(i);
     }));
     dots.forEach((dot, i) => dot.addEventListener("click", () => { stop(); go(i); }));
     cf.addEventListener("keydown", (e) => {
@@ -109,6 +112,7 @@
       lbImg.alt = src.alt;
       cap.textContent = shots[current].dataset.caption || "";
     };
+    let openedByPointer = false;
     const open = (i) => {
       if (cfStop) cfStop();
       fill(i);
@@ -126,15 +130,18 @@
       };
       lbImg.complete ? requestAnimationFrame(grow) : lbImg.addEventListener("load", grow, { once: true });
     };
-    shots.forEach((el, i) => el.addEventListener("click", () => {
-      // In the coverflow only the front card opens; the others rotate first.
-      if (el.classList.contains("cf-card") && !el.classList.contains("is-active")) return;
-      open(i);
-    }));
+    openShot = open;
+    shots.forEach((el, i) => {
+      if (el.classList.contains("cf-card")) return;   // the coverflow calls openShot itself
+      el.addEventListener("pointerdown", () => { openedByPointer = true; });
+      el.addEventListener("keydown", () => { openedByPointer = false; });
+      el.addEventListener("click", () => open(i));
+    });
     lightbox.addEventListener("close", () => {
       body.classList.remove("is-locked");
       if (cfGo) cfGo(current);
-      shots[current].focus({ preventScroll: true });
+      // Keyboard users get the focus back; a mouse click should not leave a ring behind.
+      if (!openedByPointer) shots[current].focus({ preventScroll: true });
     });
     lightbox.querySelector(".lb-close").addEventListener("click", () => lightbox.close());
     lightbox.addEventListener("click", (e) => { if (e.target === lightbox) lightbox.close(); });
