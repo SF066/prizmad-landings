@@ -6,6 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import crypto from "node:crypto";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const TEMPLATE = path.join(ROOT, "_template");
@@ -234,10 +235,20 @@ function prepare(slug) {
 }
 
 // ---------- output ----------
+// Assets keep the same name, so a query built from their content busts the CDN cache.
+function assetVersion(rel) {
+  const f = path.join(TEMPLATE, "assets", rel);
+  return crypto.createHash("md5").update(fs.readFileSync(f)).digest("hex").slice(0, 8);
+}
+
 function build(slug) {
   const { view, images, warnings, tplFile } = prepare(slug);
   const html = render(expand(fs.readFileSync(tplFile, "utf8")), [view]);
   if (/\{\{|\}\}/.test(html)) throw new BuildError("unrendered placeholder left in index.html");
+  const stamped = html
+    .replace('assets/styles.css"', `assets/styles.css?v=${assetVersion("styles.css")}"`)
+    .replace('assets/main.js"', `assets/main.js?v=${assetVersion("main.js")}"`);
+  if (stamped === html) throw new BuildError("could not stamp the asset versions");
 
   const out = path.join(ROOT, slug);
   if (fs.existsSync(out)) {
@@ -257,7 +268,7 @@ function build(slug) {
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.copyFileSync(src, dest);
   }
-  fs.writeFileSync(path.join(out, "index.html"), html);
+  fs.writeFileSync(path.join(out, "index.html"), stamped);
   fs.writeFileSync(path.join(out, MARKER), "Built by build.mjs from _prospects/" + slug + "/landing.json. Do not edit by hand.\n");
   return warnings;
 }
