@@ -4,12 +4,15 @@
         <h2 id="video-title">And this is what it looks like as ADS</h2>
         <p>This is a demo we built as a category reference, shot the way {{category.demoLabel}} would run it: {{video.sceneDetail}}, a voice, proper cuts. Yours would be exactly this, with your own gear in the frame and {{brand.name}} at the end</p>
       </div>
-      <div class="player reveal" id="player">
-        <video id="sample-video" preload="none" playsinline controls poster="assets/img/{{video.poster.file}}">
-          {{#video.file}}<source src="assets/video/{{video.file}}" type="video/mp4">{{/video.file}}
-        </video>
-        <img class="poster" src="assets/img/{{video.poster.file}}" alt="" loading="lazy">
-        {{#video.file}}<button class="play" type="button" aria-label="Play"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></button>{{/video.file}}
+      <div class="players {{videoShape}} reveal">
+        {{#videos}}<div class="player">
+          <video preload="none" playsinline controls poster="assets/img/{{poster.file}}">
+            {{#file}}<source src="assets/video/{{file}}" type="video/mp4">{{/file}}
+          </video>
+          <img class="poster" src="assets/img/{{poster.file}}" alt="" loading="lazy">
+          {{#file}}<button class="play" type="button" aria-label="Play"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path></svg></button>{{/file}}
+        </div>
+        {{/videos}}
       </div>
       <div class="center-cta"><a class="btn btn-primary btn-lg" href="#book" data-book>I want this for my products <svg class="icon icon-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></div>
     </div>

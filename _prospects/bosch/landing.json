@@ -61,8 +61,12 @@
     "focus": "50% 50%"
   },
   "video": {
-    "file": "sample.mp4",
-    "poster": "s5-bite.webp",
+    "files": [
+      {
+        "file": "sample.mp4",
+        "poster": "poster-1.webp"
+      }
+    ],
     "sceneDetail": "a real kitchen and real hands"
   },
   "form": {

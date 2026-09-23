@@ -41,8 +41,8 @@ The page copy is approved and fixed in the template. Agents never rewrite it; th
 | `hero.main`, `hero.inset` | two hero photos | file names from `scenes`. Alt and the caption on the main photo come from the scene |
 | `hero.focus` | which part of the hero photo stays in frame when it is cropped | optional, CSS `object-position`, e.g. `50% 34%` to keep a tall product whole. Default `50% 50%` |
 | `banner` | full-width image band. In `b-scene` it is the hero and is required, in the others it is an optional band after the gallery | wide 16:9 photo in `media/` |
-| `video.file` | sample player | mp4 in `media/`, 16:9. `null` hides the play button and shows only the poster |
-| `video.poster` | player poster | file name from `scenes` |
+| `video.files[]` | the sample players | one or more `{ "file", "poster" }`. Vertical 9:16 ads are shown side by side in 9:16 frames, a 16:9 ad is shown as one wide player. The shape comes from the poster, so the poster must match the video |
+| `video.file`, `video.poster` | older single-video form | still works, same as one entry in `video.files` |
 | `formats[]` | endless strip of ad formats in the orange "What we do" card | optional. Leave it out and every landing shows the same fixed set from `_template/assets/img/formats/`. Only override it when you have a full set for this product where every frame really matches its label |
 | `form.calLink` | booking calendar inside the popup | Cal.com `user/event` or full cal.com URL. Empty = popup shows the fallback form (product link, format, WhatsApp or Telegram, time). Add the same questions in the Cal.com event, including the messenger one |
 | `form.calOrigin` | optional | defaults to `https://cal.com` |

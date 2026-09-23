@@ -61,8 +61,12 @@
     "focus": "50% 50%"
   },
   "video": {
-    "file": "sample.mp4",
-    "poster": "s2-sunset.webp",
+    "files": [
+      {
+        "file": "sample.mp4",
+        "poster": "poster-1.webp"
+      }
+    ],
     "sceneDetail": "a real face in the gym"
   },
   "form": {

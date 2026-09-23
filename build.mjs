@@ -127,7 +127,7 @@ function prepare(slug) {
 
   ["brand.name", "brand.domain", "sender.name", "sender.avatar", "sender.adsReviewed", "product.name", "product.noun",
     "category.name", "category.demoLabel", "video.sceneDetail", "market.adsRunning", "market.yourAds",
-    "market.monthlySpend", "market.revenueLift", "hero.main", "hero.inset", "video.poster",
+    "market.monthlySpend", "market.revenueLift", "hero.main", "hero.inset",
     "form.mailto"].forEach((k) => need(data, k));
 
   const media = path.join(dir, "media");
@@ -158,15 +158,27 @@ function prepare(slug) {
   const avatar = path.join(TEMPLATE, "assets/img/senders", data.sender.avatar);
   if (!fs.existsSync(avatar)) throw new BuildError(`sender.avatar: _template/assets/img/senders/${data.sender.avatar} not found`);
 
-  let videoFile = null;
-  if (data.video.file) {
-    const src = path.join(media, data.video.file);
-    if (!fs.existsSync(src)) throw new BuildError(`video.file: media/${data.video.file} not found`);
-    if (path.extname(src).toLowerCase() !== ".mp4") throw new BuildError(`video.file must be .mp4`);
-    videoFile = data.video.file;
-  } else {
-    warnings.push("video.file is empty, the player shows only the poster");
+  if (!data.video || (!data.video.poster && !(Array.isArray(data.video.files) && data.video.files.every((v) => v.poster)))) {
+    throw new BuildError('landing.json: every entry in "video.files" needs a "poster", or set "video.poster"');
   }
+  const videoList = Array.isArray(data.video.files) && data.video.files.length
+    ? data.video.files
+    : (data.video.file ? [{ file: data.video.file, poster: data.video.poster }] : []);
+  if (!videoList.length) warnings.push("no video, the player shows only the poster");
+  const builtVideos = videoList.map((v, i) => {
+    const where = `video.files[${i}]`;
+    if (v.file) {
+      const src = path.join(media, v.file);
+      if (!fs.existsSync(src)) throw new BuildError(`${where}: media/${v.file} not found`);
+      if (path.extname(src).toLowerCase() !== ".mp4") throw new BuildError(`${where}: must be .mp4`);
+      images.set(`video:${v.file}`, src);
+    } else {
+      warnings.push(`${where}: no file, only the poster is shown`);
+    }
+    const poster = v.poster || data.video.poster;
+    return { file: v.file || "", poster: pick(poster, `${where}.poster`) };
+  });
+  const posterShape = builtVideos[0] && builtVideos[0].poster.height > builtVideos[0].poster.width ? "is-tall" : "is-wide";
 
   const calLink = (data.form.calLink || "").trim().replace(/^https?:\/\/(app\.)?cal\.com\//, "").replace(/\/$/, "");
   if (calLink && !/^[\w.-]+\/[\w.-]+$/.test(calLink)) throw new BuildError(`form.calLink must look like "team-or-user/event", got "${calLink}"`);
@@ -198,7 +210,9 @@ function prepare(slug) {
       ? { name, initials: data.recipient.initials || name.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase() }
       : {},
     sender: { ...data.sender, title: data.sender.title || "" },
-    video: { ...data.video, file: videoFile, poster: pick(data.video.poster, "video.poster") },
+    video: { ...data.video, poster: builtVideos[0] ? builtVideos[0].poster : pick(data.video.poster, "video.poster") },
+    videos: builtVideos,
+    videoShape: `${posterShape} count-${builtVideos.length}`,
     // b-scene puts the banner in the hero, c-texture right under the hero copy
     showBanner: Boolean(data.banner) && !["b-scene", "c-texture"].includes(template),
     hero: { main: pick(data.hero.main, "hero.main"), inset: pick(data.hero.inset, "hero.inset"), focus: data.hero.focus || "50% 50%" },
@@ -231,7 +245,6 @@ function prepare(slug) {
       calOrigin: data.form.calOrigin || "https://cal.com",
     },
   };
-  if (videoFile) images.set(`video:${videoFile}`, path.join(media, videoFile));
   return { view, images, warnings, tplFile };
 }
 

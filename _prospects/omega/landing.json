@@ -61,8 +61,16 @@
     "focus": "50% 45%"
   },
   "video": {
-    "file": "sample.mp4",
-    "poster": "s1-wrist.webp",
+    "files": [
+      {
+        "file": "sample-1.mp4",
+        "poster": "poster-1.webp"
+      },
+      {
+        "file": "sample-2.mp4",
+        "poster": "poster-2.webp"
+      }
+    ],
     "sceneDetail": "a real wrist and real light"
   },
   "form": {

@@ -144,16 +144,20 @@
     });
   }
 
-  // ---------- sample video ----------
-  const player = document.getElementById("player");
-  const video = document.getElementById("sample-video");
-  const playBtn = player && player.querySelector(".play");
-  if (player && video && playBtn) {
+  // ---------- sample videos ----------
+  document.querySelectorAll(".player").forEach((player) => {
+    const video = player.querySelector("video");
+    const playBtn = player.querySelector(".play");
+    if (!video || !playBtn) return;
     playBtn.addEventListener("click", () => {
+      // only one plays at a time
+      document.querySelectorAll(".player.is-playing video").forEach((v) => {
+        if (v !== video) { v.pause(); v.closest(".player").classList.remove("is-playing"); }
+      });
       player.classList.add("is-playing");
       video.play().catch(() => player.classList.remove("is-playing"));
     });
-  }
+  });
 
   // ---------- booking popup: Cal.com inline, fallback form ----------
   const modal = document.getElementById("book");
