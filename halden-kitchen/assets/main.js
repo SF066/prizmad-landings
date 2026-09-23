@@ -247,7 +247,6 @@
   // Fallback form (used only while no Cal.com link is set)
   const checks = {
     product: (v) => /^https?:\/\/\S+\.\S+/i.test(v),
-    email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
     messenger: (v) => v.trim().length >= 3,
   };
   const validate = (name) => {
@@ -273,7 +272,7 @@
     const btn = form.querySelector('button[type="submit"]');
 
     if (!endpoint) {
-      const text = `Product: ${data.product}\nFormat: ${data.format}\nEmail: ${data.email}\nMessenger: ${data.messenger}\nTime: ${data.time || "-"}\nPage: ${data.page}`;
+      const text = `Product: ${data.product}\nFormat: ${data.format}\nMessenger: ${data.messenger}\nTime: ${data.time || "-"}\nPage: ${data.page}`;
       location.href = `mailto:${modal.dataset.mailto}?subject=${encodeURIComponent("Free ad request: " + body.dataset.brand)}&body=${encodeURIComponent(text)}`;
       modal.classList.add("is-done");
       track("form_submit", { via: "mailto" });

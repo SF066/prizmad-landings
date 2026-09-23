@@ -22,7 +22,6 @@ The page copy is approved and fixed in the template. Agents never rewrite it; th
 | `slug` | URL folder | lowercase latin, digits, dashes. Must equal the folder name. `blenderbottle` |
 | `brand.name` | title, H1, video text, meta | exactly as the brand writes it. `BlenderBottle` |
 | `brand.domain` | form placeholders | `www.blenderbottle.com` |
-| `brand.emailDomain` | optional, email placeholder | defaults to domain without `www.` |
 | `brand.productUrlExample` | optional, product link placeholder | defaults to `https://<domain>/products/...` |
 | `recipient.name` | name chip in the hero | person the link is sent to. Leave `{}` to hide the chip |
 | `sender.name` | hero line "I'm ___, <title>. I analyzed ..." | `Sam Patel`. Avatar file must exist in `_template/assets/img/senders/` |
@@ -45,7 +44,7 @@ The page copy is approved and fixed in the template. Agents never rewrite it; th
 | `video.file` | sample player | mp4 in `media/`, 16:9. `null` hides the play button and shows only the poster |
 | `video.poster` | player poster | file name from `scenes` |
 | `formats[]` | endless strip of ad formats in the orange "What we do" card | optional. Leave it out and every landing shows the same fixed set from `_template/assets/img/formats/`. Only override it when you have a full set for this product where every frame really matches its label |
-| `form.calLink` | booking calendar inside the popup | Cal.com `user/event` or full cal.com URL. Empty = popup shows the fallback form (product link, format, email, WhatsApp or Telegram, time). Add the same questions in the Cal.com event, including the messenger one |
+| `form.calLink` | booking calendar inside the popup | Cal.com `user/event` or full cal.com URL. Empty = popup shows the fallback form (product link, format, WhatsApp or Telegram, time). Add the same questions in the Cal.com event, including the messenger one |
 | `form.calOrigin` | optional | defaults to `https://cal.com` |
 | `form.endpoint` | fallback form only: where it POSTs JSON | empty = fallback form opens a prefilled email to `form.mailto` |
 | `form.mailto` | fallback form email | `hello@prizmad.com` |
