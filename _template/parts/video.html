@@ -1,10 +1,10 @@
   <section class="sec video" id="sample" aria-labelledby="video-title">
-    <div class="wrap">
+    <div class="wrap video-layout {{videoShape}}">
       <div class="sec-head reveal">
         <h2 id="video-title">And this is what it looks like as ADS</h2>
         <p>This is a demo we built as a category reference, shot the way {{category.demoLabel}} would run it: {{video.sceneDetail}}, a voice, proper cuts. Yours would be exactly this, with your own gear in the frame and {{brand.name}} at the end</p>
       </div>
-      <div class="players {{videoShape}} reveal">
+      <div class="players reveal">
         {{#videos}}<div class="player">
           <video preload="none" playsinline controls poster="assets/img/{{poster.file}}">
             {{#file}}<source src="assets/video/{{file}}" type="video/mp4">{{/file}}
