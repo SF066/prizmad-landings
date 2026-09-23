@@ -1,5 +1,6 @@
 {
   "slug": "bivak-union",
+  "template": "b-scene",
   "brand": {
     "name": "Bivak Union",
     "domain": "www.bivakunion.com"

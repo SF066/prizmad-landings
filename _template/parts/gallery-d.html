@@ -1,0 +1,12 @@
+  <section class="band sec scenes" aria-label="{{ScenesWord}} scenes">
+    <div class="wrap">
+      <p class="scenes-lead reveal">{{ScenesWord}} scenes. Your own product. No shoot, no shipping, no location. Every frame here started as a product photo from your own site. <em>Nothing was filmed.</em></p>
+      <div class="cf reveal" id="cf" aria-roledescription="carousel" aria-label="{{ScenesWord}} ad scenes">
+        <div class="cf-stage">
+          {{#scenes}}<button class="cf-card" type="button" data-i="{{idx}}" data-lb="{{idx}}" data-num="{{num}}" data-caption="{{caption}}" aria-label="{{caption}}"><img src="assets/img/{{file}}" alt="{{alt}}" width="{{width}}" height="{{height}}" loading="lazy" draggable="false"><span class="cf-cap">{{caption}}</span></button>
+          {{/scenes}}
+        </div>
+        <div class="cf-dots">{{#scenes}}<button class="cf-dot" type="button" data-i="{{idx}}" aria-label="{{caption}}"></button>{{/scenes}}</div>
+      </div>
+    </div>
+  </section>

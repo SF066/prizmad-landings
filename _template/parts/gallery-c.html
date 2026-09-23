@@ -1,0 +1,12 @@
+  <section class="band sec scenes scenes-grid" aria-label="{{ScenesWord}} scenes">
+    <div class="wrap">
+      <p class="scenes-lead reveal">{{ScenesWord}} scenes. Your own product. No shoot, no shipping, no location. Every frame here started as a product photo from your own site. <em>Nothing was filmed.</em></p>
+      <div class="tgrid reveal">
+        {{#scenes}}<figure class="tcell">
+          <button type="button" data-lb="{{idx}}" data-caption="{{caption}}" aria-label="{{caption}}"><img src="assets/img/{{file}}" alt="{{alt}}" width="{{width}}" height="{{height}}" loading="lazy"></button>
+          <figcaption>{{caption}}</figcaption>
+        </figure>
+        {{/scenes}}
+      </div>
+    </div>
+  </section>

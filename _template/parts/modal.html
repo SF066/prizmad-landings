@@ -1,0 +1,50 @@
+<dialog class="modal" id="book" aria-labelledby="book-title" data-cal-link="{{form.calLink}}" data-cal-origin="{{form.calOrigin}}" data-endpoint="{{form.endpoint}}" data-mailto="{{form.mailto}}">
+  <div class="modal-head">
+    <div>
+      <h3 id="book-title">Pick a time and tell us what to build</h3>
+      <p>Fill out the form and we'll build a video for your product before the call</p>
+    </div>
+    <button class="modal-close" type="button" aria-label="Close" data-close><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></button>
+  </div>
+  <div class="modal-body">
+    <div class="cal-wrap" hidden>
+      <div class="cal-inline" id="cal-inline"><div class="cal-loading" aria-hidden="true"><span></span><span></span></div></div>
+    </div>
+
+    <form class="form" id="lead-form" novalidate hidden>
+      <div class="field" data-field="product">
+        <label for="f-product">Product link</label>
+        <input id="f-product" name="product" type="url" inputmode="url" autocomplete="url" placeholder="{{brand.productUrlExample}}" required>
+        <span class="err">Paste a link to the product page.</span>
+      </div>
+      <fieldset class="field">
+        <legend>Video format</legend>
+        <div class="formats">
+          <label><input type="radio" name="format" value="9:16" checked><span><i style="width:12px;height:20px"></i>9:16</span></label>
+          <label><input type="radio" name="format" value="1:1"><span><i style="width:17px;height:17px"></i>1:1</span></label>
+          <label><input type="radio" name="format" value="4:5"><span><i style="width:15px;height:19px"></i>4:5</span></label>
+          <label><input type="radio" name="format" value="16:9"><span><i style="width:22px;height:13px"></i>16:9</span></label>
+        </div>
+      </fieldset>
+      <div class="field" data-field="email">
+        <label for="f-email">Work email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@{{brand.emailDomain}}" required>
+        <span class="err">Enter a valid email.</span>
+      </div>
+      <div class="field">
+        <label for="f-time">A time that suits you</label>
+        <input id="f-time" name="time" type="text">
+      </div>
+      <button class="btn btn-primary" type="submit">Fill out the form <svg class="icon icon-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></button>
+    </form>
+
+    <div class="form-done" role="status" aria-live="polite">
+      <svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg>
+      <h3>Thank you</h3>
+    </div>
+  </div>
+</dialog>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>

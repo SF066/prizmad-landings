@@ -1,5 +1,6 @@
 {
   "slug": "blenderbottle",
+  "template": "d-character",
   "brand": {
     "name": "BlenderBottle",
     "domain": "www.blenderbottle.com"

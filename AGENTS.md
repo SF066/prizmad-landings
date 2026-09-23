@@ -18,6 +18,7 @@ The page copy is approved and fixed in the template. Agents never rewrite it; th
 
 | Field | Where it shows | Rules and example |
 |---|---|---|
+| `template` | which of the four layouts to build | `a-demo` (the product has to be shown working: kitchen appliances, sports equipment, watches), `b-scene` (the place sells: trail gear, bags, coffee and tea; needs `banner`, it becomes the hero), `c-texture` (macro and feel: skincare, supplements), `d-character` (faces and UGC: pet products, kids toys, bottles and shakers). Default `d-character` |
 | `slug` | URL folder | lowercase latin, digits, dashes. Must equal the folder name. `blenderbottle` |
 | `brand.name` | title, H1, video text, meta | exactly as the brand writes it. `BlenderBottle` |
 | `brand.domain` | form placeholders | `www.blenderbottle.com` |
@@ -39,6 +40,7 @@ The page copy is approved and fixed in the template. Agents never rewrite it; th
 | `market.revenueLift` | revenue lift from varied creative | `+60%` |
 | `scenes[]` | "five ad scenes", 3D carousel | 3-10 items. Each: `file`, `alt` (what is in the photo), `caption` (short scene description shown on the card, under 40 chars) |
 | `hero.main`, `hero.inset` | two hero photos | file names from `scenes`. Alt and the caption on the main photo come from the scene |
+| `banner` | full-width image band. In `b-scene` it is the hero and is required, in the others it is an optional band after the gallery | wide 16:9 photo in `media/` |
 | `video.file` | sample player | mp4 in `media/`, 16:9. `null` hides the play button and shows only the poster |
 | `video.poster` | player poster | file name from `scenes` |
 | `formats[]` | endless strip of ad formats in the orange "What we do" card | optional, 5-8 items `{ "file", "label" }`. Vertical 9:16 photos of THIS product in each format (UGC, Unboxing, Product demo, Talking head, Lifestyle, Hands-on, Studio), generated with Codex, no logos or text in the image. Empty = scene photos are reused |

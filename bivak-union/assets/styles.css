@@ -505,3 +505,146 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   .formats { grid-template-columns: repeat(2, 1fr); }
   .footer .wrap { flex-direction: column; align-items: flex-start; }
 }
+
+/* ============================================================
+   Template variants. Shared sections stay the same markup and
+   copy, the body class changes how they look.
+   t-a demo | t-b scene | t-c texture | t-d character
+   ============================================================ */
+
+/* ---- A: demo, the video leads ---- */
+.hero-demo .wrap { align-items: start; }
+.hero-demo .hero-copy { padding-top: 4px; }
+.demo-frame {
+  position: relative; display: block; border-radius: var(--r-lg); overflow: hidden;
+  aspect-ratio: 4 / 3; box-shadow: var(--shadow-lg); background: var(--muted);
+}
+.demo-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.demo-frame:hover img { transform: scale(1.03); }
+.demo-play {
+  position: absolute; inset: 0; margin: auto; width: 76px; height: 76px; border-radius: 999px;
+  display: grid; place-items: center; background: #fff; color: var(--ink);
+  box-shadow: 0 10px 40px rgb(0 0 0 / .35); transition: transform .25s var(--ease);
+}
+.demo-play .icon { width: 28px; height: 28px; margin-left: 4px; }
+.demo-frame:hover .demo-play { transform: scale(1.06); }
+.demo-cap {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 44px 20px 16px;
+  color: #fff; font-size: 15px; font-weight: 600;
+  background: linear-gradient(transparent, rgb(9 9 11 / .6));
+}
+.demo-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+.demo-thumbs img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
+
+.process { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; position: relative; }
+.pstep { display: grid; justify-items: center; text-align: center; gap: 10px; }
+.pshot {
+  width: 100%; padding: 0; border: 0; border-radius: var(--r-md); overflow: hidden; cursor: zoom-in;
+  background: var(--muted); box-shadow: var(--shadow); aspect-ratio: 3 / 4;
+}
+.pshot img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.pshot:hover img { transform: scale(1.04); }
+.pnum {
+  position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center;
+  background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums;
+}
+.pstep p { color: var(--soft-ink); font-size: 15px; max-width: 22ch; }
+.t-a .player { box-shadow: none; border-radius: 0; }
+.t-a .video .wrap { max-width: none; padding: 0; }
+.t-a .video .sec-head { padding: 0 24px; max-width: 720px; }
+.t-a .center-cta { padding: 0 24px; }
+
+/* ---- B: scene, the place sells ---- */
+.t-b .nav { background: transparent; border-bottom-color: transparent; backdrop-filter: none; }
+.t-b .nav.is-stuck { background: rgb(255 255 255 / .85); border-bottom-color: var(--line); backdrop-filter: blur(12px); }
+.t-b .nav:not(.is-stuck) .logo { filter: brightness(0) invert(1); }
+.t-b .nav:not(.is-stuck) .btn-outline { background: rgb(255 255 255 / .12); color: #fff; border-color: rgb(255 255 255 / .45); }
+.hero-scene {
+  position: relative; margin-top: -64px; padding: 180px 0 96px; min-height: min(86vh, 760px);
+  display: flex; align-items: flex-end; overflow: hidden; color: #fff;
+}
+.hero-scene .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.hero-scene::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, rgb(9 9 11 / .5) 0%, rgb(9 9 11 / .1) 32%, rgb(9 9 11 / .72) 100%),
+    linear-gradient(90deg, rgb(9 9 11 / .55) 0%, rgb(9 9 11 / .1) 58%, transparent 100%);
+}
+.hero-scene .hero-copy { max-width: 640px; }
+.hero-scene .sender p { color: rgb(255 255 255 / .82); }
+.hero-scene .sender img { box-shadow: 0 0 0 2px rgb(255 255 255 / .4); }
+.hero-scene .pill-accent { background: rgb(255 255 255 / .18); border-color: rgb(255 255 255 / .35); color: #fff; }
+.hero-scene h1 { color: #fff; text-shadow: 0 2px 30px rgb(0 0 0 / .35); }
+.hero-scene h1 .brand { color: var(--ring); }
+.hero-scene .lede { color: rgb(255 255 255 / .9); max-width: 48ch; }
+.hero-scene .btn-outline { background: rgb(255 255 255 / .12); color: #fff; border-color: rgb(255 255 255 / .5); }
+.hero-scene .btn-outline:hover { background: rgb(255 255 255 / .22); border-color: #fff; }
+.hero-note { position: absolute; right: 24px; bottom: 22px; font-size: 13px; color: rgb(255 255 255 / .75); }
+.scenes-mosaic { padding-bottom: 0; }
+.mosaic { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+.mtile { position: relative; margin: 0; }
+.mtile button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.mtile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1s var(--ease); }
+.mtile:hover img { transform: scale(1.04); }
+.mtile { overflow: hidden; }
+.mtile figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 16px 14px; pointer-events: none;
+  color: #fff; font-size: 14px; font-weight: 600; background: linear-gradient(transparent, rgb(9 9 11 / .6));
+  opacity: 0; transition: opacity .35s var(--ease);
+}
+.mtile:hover figcaption { opacity: 1; }
+.mtile:nth-child(1) { grid-column: span 4; grid-row: span 2; aspect-ratio: 16 / 11; }
+.mtile:nth-child(2), .mtile:nth-child(3) { grid-column: span 2; aspect-ratio: 4 / 3; }
+.mtile:nth-child(4), .mtile:nth-child(5) { grid-column: span 3; aspect-ratio: 16 / 9; }
+.t-b .video { background: #0f0f11; border-block: 0; color: #fff; }
+.t-b .video h2 { color: #fff; }
+.t-b .video .sec-head p { color: rgb(255 255 255 / .75); }
+
+/* ---- C: texture, macro and air ---- */
+.hero-texture { padding: 56px 0 0; }
+.hero-texture .wrap { grid-template-columns: 1fr; max-width: 1200px; }
+.hero-texture .hero-copy { max-width: 560px; padding-bottom: 64px; }
+.hero-bleed { position: relative; width: 100%; height: clamp(320px, 42vw, 560px); }
+.hero-bleed img { width: 100%; height: 100%; object-fit: cover; }
+.bleed-cap {
+  position: absolute; left: 24px; bottom: 18px; padding: 6px 12px; border-radius: 999px;
+  background: rgb(255 255 255 / .9); font-size: 13px; font-weight: 600;
+}
+.tgrid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: clamp(170px, 15.5vw, 250px); gap: 0; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow); }
+.tcell { position: relative; margin: 0; overflow: hidden; }
+.tcell button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.tcell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1s var(--ease); }
+.tcell:hover img { transform: scale(1.05); }
+.tcell:first-child { grid-column: span 2; grid-row: span 2; }
+.tcell:nth-child(4) { grid-column: span 2; }
+.tcell button { height: 100%; }
+.tcell figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 14px 12px; pointer-events: none;
+  color: #fff; font-size: 13px; font-weight: 600; background: linear-gradient(transparent, rgb(9 9 11 / .55));
+  opacity: 0; transition: opacity .35s var(--ease);
+}
+.tcell:hover figcaption { opacity: 1; }
+.t-c .scenes-lead { max-width: 680px; }
+.t-c .market-card { background: linear-gradient(180deg, var(--peach), #fff 60%); }
+
+/* ---- responsive for the variants ---- */
+@media (max-width: 1024px) {
+  .process { grid-template-columns: repeat(3, 1fr); }
+  .process::before { display: none; }
+  .mtile:nth-child(n) { grid-column: span 3; aspect-ratio: 4 / 3; }
+  .mtile:nth-child(1) { grid-column: span 6; grid-row: auto; aspect-ratio: 16 / 9; }
+}
+@media (max-width: 767px) {
+  .hero-demo .wrap { grid-template-columns: 1fr; }
+  .demo-thumbs { gap: 8px; }
+  .hero-scene { padding: 120px 0 64px; min-height: 0; }
+  .hero-note { display: none; }
+  .process { grid-template-columns: repeat(2, 1fr); gap: 20px 12px; }
+  .mosaic { grid-template-columns: 1fr; gap: 4px; }
+  .mtile:nth-child(n) { grid-column: auto; aspect-ratio: 4 / 3; }
+  .mtile figcaption { opacity: 1; }
+  .tgrid { grid-template-columns: repeat(2, 1fr); }
+  .tcell:first-child { grid-column: span 2; grid-row: auto; }
+  .tcell figcaption { opacity: 1; }
+  .hero-texture .hero-copy { padding-bottom: 40px; }
+}

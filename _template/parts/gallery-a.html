@@ -1,0 +1,13 @@
+  <section class="band sec scenes scenes-process" aria-label="{{ScenesWord}} scenes">
+    <div class="wrap">
+      <p class="scenes-lead reveal">{{ScenesWord}} scenes. Your own product. No shoot, no shipping, no location. Every frame here started as a product photo from your own site. <em>Nothing was filmed.</em></p>
+      <ol class="process">
+        {{#scenes}}<li class="pstep reveal">
+          <button class="pshot" type="button" data-lb="{{idx}}" data-caption="{{caption}}" aria-label="{{caption}}"><img src="assets/img/{{file}}" alt="{{alt}}" width="{{width}}" height="{{height}}" loading="lazy"></button>
+          <span class="pnum">{{num}}</span>
+          <p>{{caption}}</p>
+        </li>
+        {{/scenes}}
+      </ol>
+    </div>
+  </section>

@@ -1,5 +1,6 @@
 {
   "slug": "foss-roasters",
+  "template": "b-scene",
   "brand": {
     "name": "Foss Roasters",
     "domain": "www.fossroasters.com"

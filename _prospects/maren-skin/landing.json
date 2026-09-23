@@ -1,5 +1,6 @@
 {
   "slug": "maren-skin",
+  "template": "c-texture",
   "brand": {
     "name": "Maren",
     "domain": "www.marenskin.com"

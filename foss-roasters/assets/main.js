@@ -15,10 +15,10 @@
     items.forEach((el) => io.observe(el));
   }
 
-  // ---------- 3D coverflow, loops in a circle ----------
+  // ---------- 3D coverflow (template D) ----------
   const cf = document.getElementById("cf");
-  const lightbox = document.getElementById("lightbox");
-  let openLightbox = () => {};
+  let cfGo = null;
+  let cfStop = null;
   if (cf) {
     const cards = [...cf.querySelectorAll(".cf-card")];
     const dots = [...cf.querySelectorAll(".cf-dot")];
@@ -33,20 +33,17 @@
       return d;
     };
     const layout = () => {
-      const narrow = window.innerWidth < 768;
-      const stepX = narrow ? 58 : 64;       // % of card width between neighbours
+      const stepX = window.innerWidth < 768 ? 58 : 64;
       cards.forEach((card, i) => {
         const d = offset(i);
         const a = Math.abs(d);
-        const hidden = a > 2;
         const scale = a === 0 ? 1 : a === 1 ? 0.8 : 0.64;
-        const tx = d * stepX * (a === 2 ? 0.92 : 1);
-        card.style.transform = `translateX(${tx}%) translateZ(${-a * 140}px) rotateY(${-Math.sign(d) * Math.min(a, 2) * 22}deg) scale(${scale})`;
+        card.style.transform = `translateX(${d * stepX * (a === 2 ? 0.92 : 1)}%) translateZ(${-a * 140}px) rotateY(${-Math.sign(d) * Math.min(a, 2) * 22}deg) scale(${scale})`;
         card.style.zIndex = String(10 - a);
         card.classList.toggle("is-active", d === 0);
-        card.classList.toggle("is-hidden", hidden);
+        card.classList.toggle("is-hidden", a > 2);
         card.tabIndex = d === 0 ? 0 : -1;
-        card.setAttribute("aria-hidden", hidden ? "true" : "false");
+        card.setAttribute("aria-hidden", a > 2 ? "true" : "false");
       });
       dots.forEach((dot, i) => {
         dot.classList.toggle("is-active", i === active);
@@ -59,12 +56,13 @@
       if (reduce || timer) return;
       timer = setInterval(() => { if (!document.hidden) go(active + 1); }, 3800);
     };
+    cfGo = go;
+    cfStop = stop;
 
     let swiped = false;
     cards.forEach((card, i) => card.addEventListener("click", () => {
       if (swiped) { swiped = false; return; }
-      if (i === active) openLightbox(i);
-      else go(i);
+      if (i !== active) { stop(); go(i); }
     }));
     dots.forEach((dot, i) => dot.addEventListener("click", () => { stop(); go(i); }));
     cf.addEventListener("keydown", (e) => {
@@ -72,7 +70,6 @@
       if (e.key === "ArrowRight") { stop(); go(active + 1); }
     });
 
-    // swipe
     let x0 = null;
     const stage = cf.querySelector(".cf-stage");
     stage.addEventListener("pointerdown", (e) => { x0 = e.clientX; });
@@ -86,52 +83,64 @@
         stop(); go(active + (dx < 0 ? 1 : -1));
       }
     });
-
     cf.addEventListener("mouseenter", stop);
     cf.addEventListener("mouseleave", start);
     cf.addEventListener("focusin", stop);
     new IntersectionObserver(([e]) => (e.isIntersecting ? start() : stop()), { threshold: 0.3 }).observe(cf);
     window.addEventListener("resize", layout);
     layout();
+  }
 
-    // ---------- lightbox: the card grows into place ----------
-    if (lightbox) {
-      const img = lightbox.querySelector(".lb-img");
-      const cap = lightbox.querySelector(".lb-cap");
-      let current = 0;
-      const fill = (i) => {
-        current = ((i % n) + n) % n;
-        const src = cards[current].querySelector("img");
-        img.src = src.currentSrc || src.src;
-        img.alt = src.alt;
-        cap.textContent = cards[current].dataset.caption;
+  // ---------- lightbox: any [data-lb] grows into place ----------
+  const lightbox = document.getElementById("lightbox");
+  const shots = [...document.querySelectorAll("[data-lb]")].sort(
+    (a, b) => Number(a.dataset.lb) - Number(b.dataset.lb)
+  );
+  if (lightbox && shots.length) {
+    const lbImg = lightbox.querySelector(".lb-img");
+    const cap = lightbox.querySelector(".lb-cap");
+    const n = shots.length;
+    let current = 0;
+    const fill = (i) => {
+      current = ((i % n) + n) % n;
+      const src = shots[current].querySelector("img");
+      lbImg.src = src.currentSrc || src.src;
+      lbImg.alt = src.alt;
+      cap.textContent = shots[current].dataset.caption || "";
+    };
+    const open = (i) => {
+      if (cfStop) cfStop();
+      fill(i);
+      const from = shots[i].getBoundingClientRect();
+      lightbox.showModal();
+      body.classList.add("is-locked");
+      if (reduce) return;
+      const grow = () => {
+        const to = lbImg.getBoundingClientRect();
+        if (!to.width) return;
+        lbImg.animate([
+          { transform: `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${from.width / to.width}, ${from.height / to.height})`, borderRadius: "28px" },
+          { transform: "none", borderRadius: "20px" },
+        ], { duration: 520, easing: "cubic-bezier(.16,1,.3,1)" });
       };
-      openLightbox = (i) => {
-        stop();
-        fill(i);
-        const from = cards[i].getBoundingClientRect();
-        lightbox.showModal();
-        body.classList.add("is-locked");
-        if (reduce) return;
-        const grow = () => {
-          const to = img.getBoundingClientRect();
-          if (!to.width) return;
-          img.animate([
-            { transform: `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${from.width / to.width}, ${from.height / to.height})`, borderRadius: "28px" },
-            { transform: "none", borderRadius: "20px" },
-          ], { duration: 520, easing: "cubic-bezier(.16,1,.3,1)" });
-        };
-        img.complete ? requestAnimationFrame(grow) : img.addEventListener("load", grow, { once: true });
-      };
-      const closeLb = () => { lightbox.close(); };
-      lightbox.addEventListener("close", () => { body.classList.remove("is-locked"); go(current); cards[current].focus({ preventScroll: true }); });
-      lightbox.querySelector(".lb-close").addEventListener("click", closeLb);
-      lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLb(); });
-      lightbox.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowLeft") fill(current - 1);
-        if (e.key === "ArrowRight") fill(current + 1);
-      });
-    }
+      lbImg.complete ? requestAnimationFrame(grow) : lbImg.addEventListener("load", grow, { once: true });
+    };
+    shots.forEach((el, i) => el.addEventListener("click", () => {
+      // In the coverflow only the front card opens; the others rotate first.
+      if (el.classList.contains("cf-card") && !el.classList.contains("is-active")) return;
+      open(i);
+    }));
+    lightbox.addEventListener("close", () => {
+      body.classList.remove("is-locked");
+      if (cfGo) cfGo(current);
+      shots[current].focus({ preventScroll: true });
+    });
+    lightbox.querySelector(".lb-close").addEventListener("click", () => lightbox.close());
+    lightbox.addEventListener("click", (e) => { if (e.target === lightbox) lightbox.close(); });
+    lightbox.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") fill(current - 1);
+      if (e.key === "ArrowRight") fill(current + 1);
+    });
   }
 
   // ---------- sample video ----------

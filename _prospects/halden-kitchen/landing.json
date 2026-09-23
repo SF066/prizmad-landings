@@ -1,5 +1,6 @@
 {
   "slug": "halden-kitchen",
+  "template": "a-demo",
   "brand": {
     "name": "Halden",
     "domain": "www.haldenhome.com"

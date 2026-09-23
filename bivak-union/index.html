@@ -13,7 +13,7 @@
 <link rel="preload" href="assets/img/s3-evening.webp" as="image">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body data-slug="bivak-union" data-brand="Bivak Union">
+<body class="t-b" data-slug="bivak-union" data-brand="Bivak Union">
 
 <header class="nav" id="top">
   <div class="wrap">
@@ -24,7 +24,8 @@
 
 <main>
 
-  <section class="hero">
+  <section class="hero hero-scene">
+    <img class="hero-bg" src="assets/img/banner.webp" alt="" width="1600" height="900" fetchpriority="high">
     <div class="wrap">
       <div class="hero-copy">
         <div class="sender">
@@ -35,40 +36,44 @@
         <h1>This is what your <span class="brand">Bivak Union</span> ad could look like</h1>
         <p class="lede">You haven't sent us anything. We pulled the Trail 3 photos from your site and built five ad scenes around the tent. Tell us which product to feature and we'll build the same for your bestseller, before we even talk</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary btn-lg" href="#book" data-book>Get my creative free <svg class="icon icon-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
-          <a class="btn btn-outline btn-lg" href="#sample"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"/></svg> Watch the sample</a>
+          <a class="btn btn-primary btn-lg" href="#book" data-book>Get my creative free <svg class="icon icon-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg></a>
+          <a class="btn btn-outline btn-lg" href="#sample"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40.07l143.83,88Z"></path></svg> Watch the sample</a>
         </div>
       </div>
-      <div class="hero-media">
-        <figure class="main">
-          <img src="assets/img/s3-evening.webp" alt="Tent glowing at dusk on a ridge" width="900" height="1200" fetchpriority="high">
-          <figcaption>Warm glow at dusk</figcaption>
-        </figure>
-        <div class="inset"><img src="assets/img/s4-hiker.webp" alt="Hiker pegging down the tent" width="900" height="1200"></div>
-      </div>
     </div>
+    <span class="hero-note">Warm glow at dusk</span>
   </section>
 
-  <section class="band sec scenes" aria-label="Five scenes">
+  <section class="band sec scenes scenes-mosaic" aria-label="Five scenes">
     <div class="wrap">
       <p class="scenes-lead reveal">Five scenes. Your own product. No shoot, no shipping, no location. Every frame here started as a product photo from your own site. <em>Nothing was filmed.</em></p>
-      <div class="cf reveal" id="cf" aria-roledescription="carousel" aria-label="Five ad scenes">
-        <div class="cf-stage">
-          <button class="cf-card" type="button" data-i="0" data-num="01" data-caption="Studio, pitched and clean" aria-label="Studio, pitched and clean"><img src="assets/img/s1-studio.webp" alt="Tent on a studio backdrop" width="900" height="1200" loading="lazy" draggable="false"><span class="cf-cap">Studio, pitched and clean</span></button>
-          <button class="cf-card" type="button" data-i="1" data-num="02" data-caption="Forest clearing in the fog" aria-label="Forest clearing in the fog"><img src="assets/img/s2-forest.webp" alt="Tent in a foggy forest clearing" width="900" height="1200" loading="lazy" draggable="false"><span class="cf-cap">Forest clearing in the fog</span></button>
-          <button class="cf-card" type="button" data-i="2" data-num="03" data-caption="Warm glow at dusk" aria-label="Warm glow at dusk"><img src="assets/img/s3-evening.webp" alt="Tent glowing at dusk on a ridge" width="900" height="1200" loading="lazy" draggable="false"><span class="cf-cap">Warm glow at dusk</span></button>
-          <button class="cf-card" type="button" data-i="3" data-num="04" data-caption="Pegging down in the wind" aria-label="Pegging down in the wind"><img src="assets/img/s4-hiker.webp" alt="Hiker pegging down the tent" width="900" height="1200" loading="lazy" draggable="false"><span class="cf-cap">Pegging down in the wind</span></button>
-          <button class="cf-card" type="button" data-i="4" data-num="05" data-caption="Rain beading on the fly" aria-label="Rain beading on the fly"><img src="assets/img/s5-detail.webp" alt="Rain drops on the tent fabric" width="900" height="1200" loading="lazy" draggable="false"><span class="cf-cap">Rain beading on the fly</span></button>
-          
-        </div>
-        <div class="cf-dots"><button class="cf-dot" type="button" data-i="0" aria-label="Studio, pitched and clean"></button><button class="cf-dot" type="button" data-i="1" aria-label="Forest clearing in the fog"></button><button class="cf-dot" type="button" data-i="2" aria-label="Warm glow at dusk"></button><button class="cf-dot" type="button" data-i="3" aria-label="Pegging down in the wind"></button><button class="cf-dot" type="button" data-i="4" aria-label="Rain beading on the fly"></button></div>
-      </div>
+    </div>
+    <div class="mosaic reveal">
+      <figure class="mtile">
+        <button type="button" data-lb="0" data-caption="Studio, pitched and clean" aria-label="Studio, pitched and clean"><img src="assets/img/s1-studio.webp" alt="Tent on a studio backdrop" width="900" height="1200" loading="lazy"></button>
+        <figcaption>Studio, pitched and clean</figcaption>
+      </figure>
+      <figure class="mtile">
+        <button type="button" data-lb="1" data-caption="Forest clearing in the fog" aria-label="Forest clearing in the fog"><img src="assets/img/s2-forest.webp" alt="Tent in a foggy forest clearing" width="900" height="1200" loading="lazy"></button>
+        <figcaption>Forest clearing in the fog</figcaption>
+      </figure>
+      <figure class="mtile">
+        <button type="button" data-lb="2" data-caption="Warm glow at dusk" aria-label="Warm glow at dusk"><img src="assets/img/s3-evening.webp" alt="Tent glowing at dusk on a ridge" width="900" height="1200" loading="lazy"></button>
+        <figcaption>Warm glow at dusk</figcaption>
+      </figure>
+      <figure class="mtile">
+        <button type="button" data-lb="3" data-caption="Pegging down in the wind" aria-label="Pegging down in the wind"><img src="assets/img/s4-hiker.webp" alt="Hiker pegging down the tent" width="900" height="1200" loading="lazy"></button>
+        <figcaption>Pegging down in the wind</figcaption>
+      </figure>
+      <figure class="mtile">
+        <button type="button" data-lb="4" data-caption="Rain beading on the fly" aria-label="Rain beading on the fly"><img src="assets/img/s5-detail.webp" alt="Rain drops on the tent fabric" width="900" height="1200" loading="lazy"></button>
+        <figcaption>Rain beading on the fly</figcaption>
+      </figure>
+      
     </div>
   </section>
 
-  <section class="banner-strip" aria-label="Bivak Union scene">
-    <img src="assets/img/banner.webp" alt="" width="1600" height="900" loading="lazy">
-  </section>
+
 
   <section class="sec video" id="sample" aria-labelledby="video-title">
     <div class="wrap">

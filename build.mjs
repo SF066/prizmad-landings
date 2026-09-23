@@ -62,6 +62,16 @@ function lookup(stack, key) {
   return undefined;
 }
 
+const PARTS = path.join(TEMPLATE, "parts");
+function expand(tpl, depth = 0) {
+  if (depth > 10) throw new BuildError("partials nested too deep");
+  return tpl.replace(/\{\{>\s*([\w-]+)\}\}/g, (_, name) => {
+    const f = path.join(PARTS, `${name}.html`);
+    if (!fs.existsSync(f)) throw new BuildError(`missing partial: parts/${name}.html`);
+    return expand(fs.readFileSync(f, "utf8"), depth + 1);
+  });
+}
+
 function render(tpl, stack) {
   tpl = tpl.replace(/\{\{([#^])([\w.]+)\}\}([\s\S]*?)\{\{\/\2\}\}/g, (_, type, key, inner) => {
     const val = lookup(stack, key);
@@ -161,6 +171,14 @@ function prepare(slug) {
   if (calLink && !/^[\w.-]+\/[\w.-]+$/.test(calLink)) throw new BuildError(`form.calLink must look like "team-or-user/event", got "${calLink}"`);
   if (!calLink) warnings.push("form.calLink is empty, the popup shows the fallback form");
 
+  const template = data.template || "d-character";
+  const tplFile = path.join(TEMPLATE, "templates", `${template}.html`);
+  if (!/^[a-z-]+$/.test(template) || !fs.existsSync(tplFile)) {
+    const all = fs.readdirSync(path.join(TEMPLATE, "templates")).map((f) => f.replace(".html", ""));
+    throw new BuildError(`"template" must be one of: ${all.join(", ")}`);
+  }
+  if (template === "b-scene" && !data.banner) throw new BuildError('template "b-scene" needs a wide "banner" image, it is the hero');
+
   const words = WORDS[builtScenes.length];
   const bareDomain = data.brand.domain.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/.*$/, "");
   const name = data.recipient?.name?.trim();
@@ -181,6 +199,8 @@ function prepare(slug) {
     hero: { main: pick(data.hero.main, "hero.main"), inset: pick(data.hero.inset, "hero.inset") },
     sender: { ...data.sender, title: data.sender.title || "" },
     video: { ...data.video, file: videoFile, poster: pick(data.video.poster, "video.poster") },
+    showBanner: Boolean(data.banner) && template !== "b-scene",
+    heroThumbs: builtScenes.filter((x) => x.file !== data.hero.main).slice(0, 3),
     banner: data.banner ? { ...image(data.banner, "", "banner"), alt: "" } : { file: "" },
     formats: Array.isArray(data.formats) && data.formats.length ? data.formats.map((f, i) => {
       need(f, "label");
@@ -210,13 +230,13 @@ function prepare(slug) {
     },
   };
   if (videoFile) images.set(`video:${videoFile}`, path.join(media, videoFile));
-  return { view, images, warnings };
+  return { view, images, warnings, tplFile };
 }
 
 // ---------- output ----------
 function build(slug) {
-  const { view, images, warnings } = prepare(slug);
-  const html = render(fs.readFileSync(path.join(TEMPLATE, "index.html"), "utf8"), [view]);
+  const { view, images, warnings, tplFile } = prepare(slug);
+  const html = render(expand(fs.readFileSync(tplFile, "utf8")), [view]);
   if (/\{\{|\}\}/.test(html)) throw new BuildError("unrendered placeholder left in index.html");
 
   const out = path.join(ROOT, slug);

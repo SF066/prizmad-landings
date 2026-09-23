@@ -1,0 +1,24 @@
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="sender">
+          <img src="assets/img/senders/{{sender.avatar}}" alt="{{sender.name}}" width="44" height="44">
+          <p>I'm {{sender.name}}{{#sender.title}}, {{sender.title}}{{/sender.title}}. I analyzed {{sender.adsReviewed}} ads in your niche to see what's working in your market</p>
+        </div>
+        {{#recipient.name}}<span class="pill pill-accent">{{recipient.name}}</span>{{/recipient.name}}
+        <h1>This is what your <span class="brand">{{brand.name}}</span> ad could look like</h1>
+        <p class="lede">You haven't sent us anything. We pulled the {{product.name}} photos from your site and built {{scenesWord}} ad scenes around the {{product.noun}}. Tell us which product to feature and we'll build the same for your bestseller, before we even talk</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="#book" data-book>Get my creative free <svg class="icon icon-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+          <a class="btn btn-outline btn-lg" href="#sample"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"/></svg> Watch the sample</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <figure class="main">
+          <img src="assets/img/{{hero.main.file}}" alt="{{hero.main.alt}}" width="{{hero.main.width}}" height="{{hero.main.height}}" fetchpriority="high">
+          <figcaption>{{hero.main.caption}}</figcaption>
+        </figure>
+        <div class="inset"><img src="assets/img/{{hero.inset.file}}" alt="{{hero.inset.alt}}" width="{{hero.inset.width}}" height="{{hero.inset.height}}"></div>
+      </div>
+    </div>
+  </section>
