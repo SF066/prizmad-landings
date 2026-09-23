@@ -68,35 +68,5 @@
     "calLink": "",
     "endpoint": "",
     "mailto": "hello@prizmad.com"
-  },
-  "formats": [
-    {
-      "file": "fmt-ugc.webp",
-      "label": "UGC"
-    },
-    {
-      "file": "fmt-unboxing.webp",
-      "label": "Unboxing"
-    },
-    {
-      "file": "fmt-product-demo.webp",
-      "label": "Product demo"
-    },
-    {
-      "file": "fmt-talking-head.webp",
-      "label": "Talking head"
-    },
-    {
-      "file": "fmt-lifestyle.webp",
-      "label": "Lifestyle"
-    },
-    {
-      "file": "fmt-hands-on.webp",
-      "label": "Hands-on"
-    },
-    {
-      "file": "fmt-studio.webp",
-      "label": "Studio"
-    }
-  ]
+  }
 }

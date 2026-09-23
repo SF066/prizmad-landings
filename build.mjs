@@ -207,18 +207,16 @@ function prepare(slug) {
       need(f, "label");
       image(f.file, "", `formats[${i}]`);
       return { file: f.file, label: f.label };
-    }) : (() => {
-      const at = (k) => builtScenes[k % builtScenes.length].file;
-      return [
-        { file: "ugc-curls.webp", label: "UGC" },
-        { file: at(3), label: "Unboxing" },
-        { file: at(1), label: "Product demo" },
-        { file: "ugc-red.webp", label: "Talking head" },
-        { file: at(2), label: "Lifestyle" },
-        { file: at(0), label: "Hands-on" },
-        { file: at(4), label: "Studio" },
-      ];
-    })(),
+    }) : [
+      // One fixed set for every landing: the labels have to match the frames.
+      { file: "formats/fmt-ugc.webp", label: "UGC" },
+      { file: "formats/fmt-unboxing.webp", label: "Unboxing" },
+      { file: "formats/fmt-product-demo.webp", label: "Product demo" },
+      { file: "formats/fmt-talking-head.webp", label: "Talking head" },
+      { file: "formats/fmt-lifestyle.webp", label: "Lifestyle" },
+      { file: "formats/fmt-hands-on.webp", label: "Hands-on" },
+      { file: "formats/fmt-studio.webp", label: "Studio" },
+    ],
     finalStack: (() => {
       const others = builtScenes.filter((x) => x.file !== data.hero.main);
       return [others[0], builtScenes.find((x) => x.file === data.hero.main), others[others.length - 1]].map((x) => ({ file: x.file }));

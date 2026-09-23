@@ -43,7 +43,7 @@ The page copy is approved and fixed in the template. Agents never rewrite it; th
 | `banner` | full-width image band. In `b-scene` it is the hero and is required, in the others it is an optional band after the gallery | wide 16:9 photo in `media/` |
 | `video.file` | sample player | mp4 in `media/`, 16:9. `null` hides the play button and shows only the poster |
 | `video.poster` | player poster | file name from `scenes` |
-| `formats[]` | endless strip of ad formats in the orange "What we do" card | optional, 5-8 items `{ "file", "label" }`. Vertical 9:16 photos of THIS product in each format (UGC, Unboxing, Product demo, Talking head, Lifestyle, Hands-on, Studio), generated with Codex, no logos or text in the image. Empty = scene photos are reused |
+| `formats[]` | endless strip of ad formats in the orange "What we do" card | optional. Leave it out and every landing shows the same fixed set from `_template/assets/img/formats/`. Only override it when you have a full set for this product where every frame really matches its label |
 | `form.calLink` | booking calendar inside the popup | Cal.com `user/event` or full cal.com URL. Empty = popup shows the fallback form |
 | `form.calOrigin` | optional | defaults to `https://cal.com` |
 | `form.endpoint` | fallback form only: where it POSTs JSON | empty = fallback form opens a prefilled email to `form.mailto` |
