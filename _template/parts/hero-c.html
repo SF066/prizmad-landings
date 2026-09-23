@@ -1,4 +1,5 @@
   <section class="hero hero-texture">
+    <img class="hero-photo" src="assets/img/{{heroBleed.file}}" alt="{{heroBleed.alt}}" width="{{heroBleed.width}}" height="{{heroBleed.height}}" fetchpriority="high">
     <div class="wrap">
       <div class="hero-copy">
         <div class="sender">
@@ -14,8 +15,5 @@
         </div>
       </div>
     </div>
-    <div class="hero-bleed">
-      <img src="assets/img/{{heroBleed.file}}" alt="{{heroBleed.alt}}" width="{{heroBleed.width}}" height="{{heroBleed.height}}" fetchpriority="high">
-      {{#heroBleed.caption}}<span class="bleed-cap">{{heroBleed.caption}}</span>{{/heroBleed.caption}}
-    </div>
+
   </section>
