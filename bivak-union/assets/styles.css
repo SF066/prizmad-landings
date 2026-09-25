@@ -99,7 +99,7 @@ p { text-wrap: pretty; }
   background: var(--accent); color: #fff; font-size: 11px; font-weight: 700;
 }
 .for-chip span.txt { color: var(--muted-ink); font-weight: 400; }
-.hero h1 { font-size: clamp(40px, 5vw, 60px); letter-spacing: -0.03em; }
+.hero h1 { font-size: clamp(34px, 3.9vw, 52px); letter-spacing: -0.03em; }
 .hero h1 .brand { color: var(--accent); }
 .hero .lede { font-size: 19px; color: var(--muted-ink); max-width: 42ch; line-height: 1.5; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
@@ -130,6 +130,12 @@ p { text-wrap: pretty; }
 }
 .hero-media .inset img { width: 100%; height: 100%; object-fit: cover; }
 
+.hero-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.meta-tag {
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px;
+  background: var(--accent); color: #fff; font-size: 15px; font-weight: 700; letter-spacing: -0.01em;
+}
+.meta-tag .icon { width: 18px; height: 18px; fill: currentColor; }
 /* Sender line (hero) */
 .sender { display: flex; align-items: center; gap: 12px; max-width: 460px; }
 .sender img { width: 44px; height: 44px; border-radius: 999px; object-fit: cover; flex: none; box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--line); }
@@ -238,15 +244,29 @@ p { text-wrap: pretty; }
 .player.is-playing .play, .player.is-playing .poster { display: none; }
 .center-cta { display: flex; justify-content: center; margin-top: 40px; }
 
-/* Market */
-.market-card {
-  display: grid; grid-template-columns: 1.15fr 1fr; background: #fff;
+/* Market: you vs your niche */
+.vs-card {
+  display: grid; grid-template-columns: 1fr auto 1.35fr; align-items: stretch; background: #fff;
   border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow); overflow: hidden;
 }
-.stat-big { padding: 48px; background: linear-gradient(160deg, var(--peach), #fff 70%); border-right: 1px solid var(--line); display: grid; align-content: end; }
-.stat-big .num { font-size: clamp(96px, 13vw, 176px); font-weight: 800; letter-spacing: -0.06em; line-height: .9; color: var(--accent); font-variant-numeric: tabular-nums; }
-.stat-big p { margin-top: 18px; font-size: 18px; color: var(--soft-ink); max-width: 30ch; }
-.stat-big p strong { color: var(--ink); }
+.vs-side { padding: 44px 48px; display: grid; align-content: end; gap: 6px; }
+.vs-lbl { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted-ink); }
+.vs-side .num { font-weight: 800; letter-spacing: -0.06em; line-height: .9; font-variant-numeric: tabular-nums; }
+.vs-you .num { font-size: clamp(72px, 8vw, 112px); color: var(--ink); }
+.vs-them { background: linear-gradient(160deg, var(--peach), #fff 75%); }
+.vs-them .num { font-size: clamp(96px, 13vw, 176px); color: var(--accent); }
+.vs-side p { margin-top: 10px; font-size: 18px; color: var(--soft-ink); max-width: 28ch; }
+.vs-mid {
+  align-self: center; display: grid; place-items: center; width: 56px; height: 56px; margin: 0 -28px; z-index: 1;
+  border-radius: 999px; background: var(--ink); color: #fff; font-weight: 700; font-size: 15px; letter-spacing: .02em;
+}
+.market-why {
+  display: grid; grid-template-columns: 1.15fr 1fr; margin-top: 20px; background: #fff;
+  border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow); overflow: hidden;
+}
+.why-copy { padding: 40px 48px; display: grid; gap: 16px; align-content: center; border-right: 1px solid var(--line); }
+.why-copy p { font-size: 18px; line-height: 1.55; color: var(--soft-ink); max-width: 52ch; }
+.why-copy p:first-child { color: var(--ink); font-weight: 600; }
 .stat-side { display: grid; }
 .stat-side > div { padding: 36px 40px; }
 .stat-side > div + div { border-top: 1px solid var(--line); }
@@ -471,8 +491,9 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   .prod-grid { grid-template-columns: 1fr; }
   .num-row { grid-template-columns: repeat(2, 1fr); gap: 36px 0; }
   .num-row > div:nth-child(3) { border-left: 0; }
-  .market-card { grid-template-columns: 1fr; }
-  .stat-big { border-right: 0; border-bottom: 1px solid var(--line); }
+  .vs-card, .market-why { grid-template-columns: 1fr; }
+  .vs-mid { margin: -28px auto; }
+  .why-copy { border-right: 0; border-bottom: 1px solid var(--line); }
 }
 
 /* Mobile */
@@ -482,7 +503,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   .sec-head { margin-bottom: 40px; }
   .hero { padding: 24px 0 56px; }
   .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
-  .hero h1 { font-size: 38px; }
+  .hero h1 { font-size: 33px; }
   .hero .lede { font-size: 17px; }
   .hero-ctas { width: 100%; }
   .hero-ctas .btn { flex: 1 1 auto; }
@@ -493,7 +514,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   .cf-stage { height: 440px; }
   .cf-card { width: 270px; margin-left: -135px; }
   .lb-img { max-height: 70vh; }
-  .stat-big, .stat-side > div { padding: 28px 22px; }
+  .vs-side, .why-copy, .stat-side > div { padding: 28px 22px; }
   .prod-head { padding: 28px 22px 0; }
   .formats-marquee { width: calc(100% + 44px); margin: 20px -22px 0; height: 170px; }
   .fm-card { width: 128px; height: 214px; }
@@ -673,7 +694,6 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
 @media (prefers-reduced-motion: reduce) { .strip-track { animation: none; } }
 
 .t-c .scenes-lead { max-width: 680px; }
-.t-c .market-card { background: linear-gradient(180deg, var(--peach), #fff 60%); }
 
 /* ---- responsive for the variants ---- */
 @media (max-width: 1024px) {

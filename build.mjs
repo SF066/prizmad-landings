@@ -129,6 +129,9 @@ function prepare(slug) {
     "category.name", "category.demoLabel", "video.sceneDetail", "market.adsRunning", "market.yourAds",
     "market.monthlySpend", "market.revenueLift", "hero.main", "hero.inset",
     "form.mailto"].forEach((k) => need(data, k));
+  ["adsRunning", "yourAds"].forEach((k) => {
+    if (!/^[0-9][0-9,]*\+?$/.test(String(data.market[k]))) throw new BuildError(`market.${k} must be digits from Meta Ad Library, e.g. "937"`);
+  });
 
   const media = path.join(dir, "media");
   const images = new Map();

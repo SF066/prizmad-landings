@@ -33,8 +33,8 @@ The page copy is approved and fixed in the template. Agents never rewrite it; th
 | `category.name` | "We analyzed the ___ ad market" and table row "Finding a UGC creator for ___" | lowercase. `outdoor gear` |
 | `category.demoLabel` | "shot the way ___ would run it" | with article, a reference brand only after "like". `a big outdoor label like The North Face` |
 | `video.sceneDetail` | "would run it: ___, a voice, proper cuts" | `a real face by the fire` |
-| `market.adsRunning` | big number: ads the average brand in the category runs | real number from Ad Spy / Meta Ad Library. `792` |
-| `market.yourAds` | "while you run ___" | the prospect's live ad count, as a word up to ten. `four` |
+| `market.adsRunning` | right side of the "you vs your niche" block under the hero: ads the average brand in the category runs on Meta | real number from Meta Ad Library, digits. `937` |
+| `market.yourAds` | left side of the same block: the prospect's live Meta ads | real count from Meta Ad Library for this brand, digits. `10` |
 | `market.monthlySpend` | spend of brands this size per month | `$50,000/m` |
 | `market.revenueLift` | revenue lift from varied creative | `+60%` |
 | `scenes[]` | "five ad scenes", 3D carousel | 3-10 items. Each: `file`, `alt` (what is in the photo), `caption` (short scene description shown on the card, under 40 chars) |
