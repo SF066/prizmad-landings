@@ -1,26 +1,14 @@
   <section class="band sec market" aria-labelledby="market-title">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="pill">Data-driven, from Meta Ad Library</span>
-        <h2 id="market-title">Your Meta ads against the {{category.name}} market</h2>
+        <span class="pill">We looked at your category</span>
+        <h2 id="market-title">We analyzed the {{category.name}} ad market</h2>
+        <p>Same products, same budgets across the category. What separates the brands that win is how many creatives they put in rotation</p>
       </div>
-      <div class="vs-card reveal">
-        <div class="vs-side vs-you">
-          <span class="vs-lbl">{{brand.name}}</span>
-          <div class="num">{{market.yourAds}}</div>
-          <p>ads you are running on Meta right now</p>
-        </div>
-        <span class="vs-mid" aria-hidden="true">vs</span>
-        <div class="vs-side vs-them">
-          <span class="vs-lbl">Brands in your niche</span>
+      <div class="market-card reveal">
+        <div class="stat-big">
           <div class="num">{{market.adsRunning}}</div>
-          <p>ads the average {{category.name}} brand is running right now</p>
-        </div>
-      </div>
-      <div class="market-why reveal">
-        <div class="why-copy">
-          <p>The gap is not about need. Your competitors don't know something you don't, they simply feed the algorithm more. Made the old way, that many creatives costs more than most brands can put into them.</p>
-          <p>In the AI era the brand that tests more wins. We help you scale ad creatives at a fraction of the cost, several times cheaper than an agency. That is a strategic approach to Meta ads, not one more video.</p>
+          <p>ads the average brand in your category is running right now, while you run {{market.yourAds}}</p>
         </div>
         <div class="stat-side">
           <div><div class="num">{{market.monthlySpend}}</div><p>what brands your size spend on ads every month. Creative is the cheapest part of it</p></div>
